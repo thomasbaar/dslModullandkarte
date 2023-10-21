@@ -4,12 +4,605 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>110</y>
-      <w>100</w>
+      <x>590</x>
+      <y>260</y>
+      <w>190</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>*Curriculum*
+-
+name:ID 
+type:CurrType
+displayShortName:string
+fullName:string
+status:CurrStatus
+noSemester:int
+poNumber:ID[0..1]
+remark:string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>210</x>
+      <y>150</y>
+      <w>330</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>*name*
+- short form of study programme name, e.g. ce_ba
+*displayShortName*
+- displayed version of short name, e.g. CE(BA)
+*fullName*
+- full name without bachelor/master, 
+  e.g. Computer Engineering
+*status*
+- current usage mode of the curriculum
+*noSemesters*
+- duration of study programme
+*poNumer*
+- optional official number of PrüfungsOrdnung
+(should be availabe when status &lt;&gt; 'planned')
+*remark*
+- any text explaining e.g. the current status or
+authorship
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>260</y>
+      <w>140</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*CurriculumType*
+-
+bachelor
+master</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>480</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>*Module*
+-
+name:ID 
+officialID:string
+shortName:string
+officialName:string
+semester:int
+etcs:int
+workingHours1:int
+workingHours2:int[0..1]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>420</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=*</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>260</y>
+      <w>150</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*CurriculumStatus*
+-
+planned
+running
+ending
+archived</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>210</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>260</x>
+      <y>80</y>
+      <w>330</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Which are the official names of a curriculum?
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1190</x>
+      <y>80</y>
+      <w>330</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>*planned*
+- curriculum is not running yet, still in 
+the planning/discussion/dreaming phase
+*running*
+- curricum is currently in usage
+*ending*
+- the curriculum phases out; perhaps the 
+successor is already running
+*archived*
+- no students study this curriculum any longer
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1150</x>
+      <y>150</y>
+      <w>60</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>90</x>
+      <y>480</y>
+      <w>270</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>*name*
+- mnemonic ID, e.g. ma1
+*officialID*
+- official id, e.g. CE11
+*shortName*
+- short name to be displayed in overviews,
+, e.g. Mathe1
+*officialName*
+- official name, e.g. Mathematik 1
+*semester*
+- in which semester is the module
+  taught
+*etcs*
+- number of Etcs points
+*workingHours1*
+- student's weekly effort for
+  main part of module (e.g. lecture)
+*workingHours2*
+- student's weekly effort for
+  additional part of module (e.g. exercise)
+  
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>510</y>
+      <w>70</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;30.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>140</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>*Model*
+-
+name:ID 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>730</x>
+      <y>0</y>
+      <w>270</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>*name*
+- unique name, e.g. v0001
+- just in case multiple models would be 
+  available in one workspace (quite unlikely)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>80</y>
+      <w>70</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>200</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=*</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>540</y>
+      <w>210</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Curriculum</panel_attributes>
+    <panel_attributes>*SupplementaryInformation*
+ 
+
+</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>420</y>
+      <w>70</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>640</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*LearningOutcomeSection*
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>560</y>
+      <w>90</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>650</y>
+      <w>70</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>50.0;160.0;10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>760</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>*LearningOutcome*
+-
+val:string
+ 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>670</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>690</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*MandatoryOptionalSection*
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>560</y>
+      <w>50</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>830</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>*MandatoryOrOption*
+-
+val:MandatoryOptionalType
+ 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>720</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>810</x>
+      <y>750</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>English names 
+really appropriate?
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>670</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>720</y>
+      <w>40</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>800</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>130.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>900</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*MandatoryOptionalKind*
+-
+pflicht 
+wahlpflicht</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>800</y>
+      <w>60</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>860</x>
+      <y>390</y>
+      <w>270</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>supplementary information could
+also be encoded directly as attributes
+of Module
+This way, however, we make the DSL
+more robust with respect to later
+additions/changes
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>470</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;70.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>640</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*PrerequisiteSection*
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>560</y>
+      <w>130</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>1010</y>
+      <w>160</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>*PrerequisiteSection*
+--
+kind:PrerequisiteKind
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>970</x>
+      <y>670</y>
+      <w>60</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>1090</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*PrerequisiteKind*
+-
+necessary
+recommended</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>650</y>
+      <w>500</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+r2=predec</panel_attributes>
+    <additional_attributes>480.0;400.0;10.0;400.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>650</y>
+      <w>440</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+r2=succ</panel_attributes>
+    <additional_attributes>420.0;380.0;10.0;380.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

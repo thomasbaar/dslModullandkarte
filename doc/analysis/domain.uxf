@@ -12,13 +12,13 @@
     <panel_attributes>*Curriculum*
 -
 name:ID 
-type:CurrType
+type:CurriculumType
 displayShortName:string
 fullName:string
-status:CurrStatus
-noSemester:int
+status:CurriculumStatus
+noSemesters:int
 poNumber:ID[0..1]
-remark:string
+remark:string[0..1]
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -41,7 +41,7 @@ remark:string
 - current usage mode of the curriculum
 *noSemesters*
 - duration of study programme
-*poNumer*
+*poNumber*
 - optional official number of PrüfungsOrdnung
 (should be availabe when status &lt;&gt; 'planned')
 *remark*
@@ -71,7 +71,7 @@ master</panel_attributes>
       <x>400</x>
       <y>480</y>
       <w>210</w>
-      <h>180</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes>*Module*
 -
@@ -81,8 +81,12 @@ shortName:string
 officialName:string
 semester:int
 etcs:int
-workingHours1:int
-workingHours2:int[0..1]
+workingHoursSL:int[0..1]
+workingHoursBUE:int[0..1]
+workingHoursPUE:int[0..1]
+workingHoursPCUE:int[0..1]
+workingHoursLPr:int[0..1]
+workingHoursPS:int[0..1]
 
 </panel_attributes>
     <additional_attributes/>
@@ -96,7 +100,8 @@ workingHours2:int[0..1]
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-r2=*</panel_attributes>
+r2=modules
+m2=*</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
@@ -175,8 +180,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>90</x>
-      <y>480</y>
+      <x>60</x>
+      <y>740</y>
       <w>270</w>
       <h>370</h>
     </coordinates>
@@ -207,13 +212,13 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>510</y>
-      <w>70</w>
-      <h>50</h>
+      <x>320</x>
+      <y>630</y>
+      <w>100</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;30.0;50.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -265,7 +270,8 @@ bg=yellow</panel_attributes>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-r2=*</panel_attributes>
+r2=curriculums
+m2=*</panel_attributes>
     <additional_attributes>120.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
@@ -273,10 +279,10 @@ r2=*</panel_attributes>
     <coordinates>
       <x>700</x>
       <y>540</y>
-      <w>210</w>
+      <w>290</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>*SupplementaryInformation*
+    <panel_attributes>*SupplementaryCurriculumInformation*
  
 
 </panel_attributes>
@@ -287,11 +293,12 @@ r2=*</panel_attributes>
     <coordinates>
       <x>700</x>
       <y>420</y>
-      <w>70</w>
+      <w>120</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-r2=1</panel_attributes>
+r2=suppInfo
+m2=*</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;120.0</additional_attributes>
   </element>
   <element>
@@ -316,20 +323,21 @@ r2=1</panel_attributes>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=0..1</panel_attributes>
+m2=0..1
+r2=los</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>650</y>
+      <y>710</y>
       <w>70</w>
-      <h>180</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=1</panel_attributes>
-    <additional_attributes>50.0;160.0;10.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>50.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -352,10 +360,11 @@ val:string
     <coordinates>
       <x>640</x>
       <y>670</y>
-      <w>60</w>
+      <w>90</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=outcomes
 m2=*</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;90.0</additional_attributes>
   </element>
@@ -381,7 +390,8 @@ m2=*</panel_attributes>
       <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=0..1</panel_attributes>
+m2=0..1
+r2=mos</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
@@ -392,9 +402,9 @@ m2=0..1</panel_attributes>
       <w>190</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>*MandatoryOrOption*
+    <panel_attributes>*MandatoryOrOptional*
 -
-val:MandatoryOptionalType
+kind:MandatoryOptionalKind
  
 
 </panel_attributes>
@@ -405,11 +415,12 @@ val:MandatoryOptionalType
     <coordinates>
       <x>760</x>
       <y>720</y>
-      <w>30</w>
+      <w>80</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=*</panel_attributes>
+m2=*
+r2=moFlags</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
@@ -534,7 +545,8 @@ bg=yellow</panel_attributes>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=0..1</panel_attributes>
+m2=0..1
+r2=ps</panel_attributes>
     <additional_attributes>10.0;10.0;110.0;80.0</additional_attributes>
   </element>
   <element>
@@ -545,7 +557,7 @@ m2=0..1</panel_attributes>
       <w>160</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>*PrerequisiteSection*
+    <panel_attributes>*Prerequisite*
 --
 kind:PrerequisiteKind
 
@@ -557,11 +569,12 @@ kind:PrerequisiteKind
     <coordinates>
       <x>970</x>
       <y>670</y>
-      <w>60</w>
+      <w>110</w>
       <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=*</panel_attributes>
+m2=*
+r2=prerequisites</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;340.0</additional_attributes>
   </element>
   <element>
@@ -583,26 +596,76 @@ recommended</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>410</x>
-      <y>650</y>
+      <y>710</y>
       <w>500</w>
-      <h>420</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=1
 r2=predec</panel_attributes>
-    <additional_attributes>480.0;400.0;10.0;400.0;10.0;10.0</additional_attributes>
+    <additional_attributes>480.0;340.0;10.0;340.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>470</x>
-      <y>650</y>
+      <y>710</y>
       <w>440</w>
-      <h>400</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=1
 r2=succ</panel_attributes>
-    <additional_attributes>420.0;380.0;10.0;380.0;10.0;10.0</additional_attributes>
+    <additional_attributes>420.0;320.0;10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>450</y>
+      <w>330</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>- ForeignLanguage Modules doe not have officialID?
+- Wahlpflichtmodules are templates in the curriculum
+  and do not have an officeialID
+- Pr
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>560</y>
+      <w>330</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>How short should the Shortnames be?
+'Mathe 1' or 'Ma1'
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>480</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>480</y>
+      <w>90</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;70.0;10.0</additional_attributes>
   </element>
 </diagram>

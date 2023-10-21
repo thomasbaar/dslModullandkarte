@@ -1,0 +1,359 @@
+model v001
+
+curriculum ce_ba
+type bachelor
+displayShortName "CE(BA)"
+fullName "Computer Engineering"
+status running
+noSemesters 6
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                  _____                  _____       __      
+//|  \/  |         | |     | |                /  ___|                |_   _|     / _|     
+//| .  . | ___   __| |_   _| | ___  ___ ______\ `--. _   _ _ __  _ __  | | _ __ | |_ ___  
+//| |\/| |/ _ \ / _` | | | | |/ _ \/ __|______|`--. \ | | | '_ \| '_ \ | || '_ \|  _/ _ \ 
+//| |  | | (_) | (_| | |_| | |  __/\__ \      /\__/ / |_| | |_) | |_) || || | | | || (_) |
+//\_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_| .__/| .__/\___/_| |_|_| \___/ 
+//                                                        | |   | |                       
+//////////////////////////////////////////////////////////
+
+
+
+supplementaryCurriculumInformation
+
+prerequisiteSection
+ma1 -> ma2 recommended
+fs1 -> fs2 recommended
+et1 -> et2 recommended
+et1 -> ro recommended
+prog1 -> prog2 recommended
+
+
+
+
+
+
+
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                 ______           _     ______      _        
+// |  \/  |         | |     | |                | ___ \         (_)    |  _  \    | |       
+// | .  . | ___   __| |_   _| | ___  ___ ______| |_/ / __ _ ___ _  ___| | | |__ _| |_ __ _ 
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|______| ___ \/ _` / __| |/ __| | | / _` | __/ _` |
+// | |  | | (_) | (_| | |_| | |  __/\__ \      | |_/ / (_| \__ \ | (__| |/ / (_| | || (_| |
+// \_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_|___/_|\___|___/ \__,_|\__\__,_|
+//                                                                                        
+//////////////////////////////////////////////////////////
+
+
+//
+// Semester 1
+//
+module ma1 
+officialID "CE11"
+shortName "Mathe 1"
+officialName "Mathematik 1"
+semester 1
+etcs 6
+workingHoursSL 5
+workingHoursBUE 1
+
+module prog1
+officialID "CE22"
+shortName "Programmieren 1"
+officialName "Grundlagen der Programmierung"
+semester 1
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module et1
+officialID "CE40"
+shortName "ET 1"
+officialName "Elektrotechnische Grundlagen 1"
+semester 1
+etcs 5
+workingHoursSL 4
+workingHoursBUE 1
+
+module dt1
+officialID "CE43"
+shortName "Digitaltechnik"
+officialName "Digitaltechnik"
+semester 1
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module einfce
+officialID "CE59"
+shortName "Einführung CE"
+officialName "Einführung in Computer Engineering"
+semester 1
+etcs 5
+workingHoursSL 2
+workingHoursPS 2
+
+
+module fs1
+officialID "BLAFS1"
+shortName "Fremdsprache 1"
+officialName "Fremdsprache 1"
+semester 1
+etcs 4
+workingHoursPUE 4
+
+
+//
+// Semester 2
+//
+module ma2 
+officialID "CE12"
+shortName "Mathe 2"
+officialName "Mathematik 2"
+semester 2
+etcs 6
+workingHoursSL 5
+workingHoursBUE 1
+
+module phy
+officialID "CE15"
+shortName "Physik"
+officialName "Physik"
+semester 2
+etcs 5
+workingHoursSL 4
+workingHoursLPr 1
+
+module prog2
+officialID "CE23"
+shortName "Programmieren 2"
+officialName "Fortgeschrittene Algorithmen und Programmierung"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module ro
+officialID "CE24"
+shortName "Rechnerorganisation"
+officialName "Rechnerorganisation"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursLPr 2
+
+module et2
+officialID "CE41"
+shortName "ET 2"
+officialName "Elektrotechnische Grundlagen 2"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursLPr 2
+
+module fs2
+officialID "BLAFS2"
+shortName "Fremdsprache 2"
+officialName "Fremdsprache 2"
+semester 2
+etcs 4
+workingHoursPUE 4
+
+
+//
+// Semester 3
+//
+module adk
+officialID "CE21"
+shortName "ADK"
+officialName "Algorithmen, Datenstrukturen und Komplexität"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module bs
+officialID "CE25"
+shortName "Betriebssysteme"
+officialName "Betriebssysteme"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module digitSys
+officialID "CE30"
+shortName "Digitale Systeme"
+officialName "Entwurf digitaler Systeme (FPGA-Entwurf)"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursLPr 2
+
+module anaelek
+officialID "CE42"
+shortName "Analogelektronik"
+officialName "Analogelektronik"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module lpl
+officialID "CE60"
+shortName "Leiterplattenentwurf"
+officialName "Leiterplattenentwurf"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursLPr 2
+
+module sv
+officialID "CE61"
+shortName "Signalverarbeitung"
+officialName "Signalverarbeitung"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+//
+// Semester 4
+//
+
+module mpt
+officialID "CE20"
+shortName "Mikroprozessortechnik"
+officialName "Mikroprozessortechnik"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module cn
+officialID "CE26"
+shortName "CN"
+officialName "Computernetzwerke"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module swt
+officialID "CE27"
+shortName "SWT"
+officialName "Softwaretechnik"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module sysprog
+officialID "CE28"
+shortName "SysProg"
+officialName "Systemprogrammierung"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module emb
+officialID "CE31"
+shortName "EmbSys"
+officialName "Embedded Systems"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module mrt
+officialID "CE62"
+shortName "MRT"
+officialName "Mess- und Regelungstechnik"
+semester 4
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+//
+// Semester 5
+//
+
+module db
+officialID "CE29"
+shortName "DB"
+officialName "Datenbanken"
+semester 5
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module proj
+officialID "CE71"
+shortName "Projekt"
+officialName "Projekt Computer Systems Engineering"
+semester 5
+etcs 5
+workingHoursPCUE 1  
+workingHoursPS 1
+
+module sem
+officialID "CE73"
+shortName "Seminar"
+officialName "Seminar Advanced Computer Systems"
+semester 5
+etcs 5 
+workingHoursPS 2
+
+module wp1
+officialID "BLAWP1"
+shortName "Wahlpflicht1"
+officialName "Wahlpflichtmodul 1"
+semester 5
+etcs 5 
+workingHoursPUE 2
+
+module wp2
+officialID "BLAWP2"
+shortName "Wahlpflicht2"
+officialName "Wahlpflichtmodul 2"
+semester 5
+etcs 5 
+workingHoursPUE 2
+
+module awe
+officialID "BLAAWE"
+shortName "AWE"
+officialName "Fremdsprache oder AWE-Modul"
+semester 5
+etcs 4
+workingHoursPUE 4
+
+// erstreckt sich bis ins 6. Semester
+module prakt
+officialID "CE91"
+shortName "Praktikum"
+officialName "Praxisphase: Fachpraktikum"
+semester 5
+etcs 16
+workingHoursPUE 1
+
+
+//
+// Semester 6
+//
+module bachsem
+officialID "CE94"
+shortName "Bachelorseminar"
+officialName "Bachelorseminar und Kolloquium"
+semester 6
+etcs 3
+workingHoursSL 1
+workingHoursPS 1
+
+
+
+

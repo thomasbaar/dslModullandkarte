@@ -1,4 +1,5 @@
-import { Curriculum, Module } from '../language/generated/ast.js';
+//import { Curriculum, Module } from '../language/generated/ast.js';
+import { Curriculum} from '../language/generated/ast.js';
 import { createModulLandKarteServices } from '../language/modul-land-karte-module.js';
 import { AstNode, EmptyFileSystem, LangiumServices } from 'langium';
 import { URI } from 'vscode-uri';
@@ -11,15 +12,15 @@ import { URI } from 'vscode-uri';
 export async function parseAndGenerate(CurriculumData: string): Promise<Object[]> {
     const services = createModulLandKarteServices(EmptyFileSystem).ModulLandKarte;
     const model = await extractAstNodeFromString<Curriculum>(CurriculumData, services);
-    console.log(model);
     // generate commands from the model
-    const cmds = generateCurriculumObject(model);
+    console.log('Hello hier ist parseAndGenerate!');
+    console.log('Das Model:', model);
+    //const cmds = generateCurriculumObject(model);
+    //console.log('Die Commands:', cmds);
 
-    console.log("Hello hier ist parseAndGenerate!");
-    console.log(cmds);
-    return [cmds];
+    return [model];
 }
-
+/*
 interface SimplifiedModule {
     name: string;
     officialID: string;
@@ -39,13 +40,13 @@ interface SimplifiedCurriculum {
     modules: SimplifiedModule[];
 
 }
-
+*/
 /**
  * Generates a simplified curriculim from the AST
  * @param curriculum The curriculum ast-node which is going to be processed
  * @returns simplified curriculum object
  */
-function generateCurriculumObject(curriculum: Curriculum): SimplifiedCurriculum {
+/*function generateCurriculumObject(curriculum: Curriculum): SimplifiedCurriculum {
     const result: SimplifiedCurriculum = {
         name: curriculum.name,
         type: curriculum.type.val, 
@@ -67,7 +68,7 @@ function generateCurriculumObject(curriculum: Curriculum): SimplifiedCurriculum 
 
     return result;
 }
-
+*/
 /**
  * Extracts an AST node from a virtual document, represented as a string
  * @param content Content to create virtual document from

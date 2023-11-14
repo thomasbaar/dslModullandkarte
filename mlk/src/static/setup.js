@@ -391,6 +391,7 @@ window.generateAndDisplay = generateAndDisplay;
 
 // Takes generated MiniLogo commands, and draws on an HTML5 canvas
 function updateMLKCanvas(cmds) {
+    console.log(cmds);
     const canvas = document.getElementById('mlk-canvas');
     const context = canvas.getContext('2d');
 

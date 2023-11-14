@@ -18,3 +18,4 @@ export function generateJavaScript(model: Model, filePath: string, destination: 
     fs.writeFileSync(generatedFilePath, toString(fileNode));
     return generatedFilePath;
 }
+

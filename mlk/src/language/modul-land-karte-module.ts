@@ -3,6 +3,9 @@ import { createDefaultModule, createDefaultSharedModule, inject } from 'langium'
 import { ModulLandKarteGeneratedModule, ModulLandKarteGeneratedSharedModule } from './generated/module.js';
 import { ModulLandKarteValidator, registerValidationChecks } from './modul-land-karte-validator.js';
 
+import { AbstractExecuteCommandHandler, ExecuteCommandAcceptor } from 'langium';
+import { parseAndGenerate } from '../web/index.js'; 
+
 /**
  * Declaration of custom services - add your own service classes here.
  */
@@ -28,6 +31,17 @@ export const ModulLandKarteModule: Module<ModulLandKarteServices, PartialLangium
         ModulLandKarteValidator: () => new ModulLandKarteValidator()
     }
 };
+
+class ModulLandKarteCommandHandler extends AbstractExecuteCommandHandler {
+    registerCommands(acceptor: ExecuteCommandAcceptor): void {
+        acceptor('parseAndGenerate', args => {
+          
+            return parseAndGenerate(args[0]);
+        });
+    }
+}
+
+
 
 /**
  * Create the full set of services required by Langium.
@@ -56,7 +70,9 @@ export function createModulLandKarteServices(context: DefaultSharedModuleContext
         createDefaultModule({ shared }),
         ModulLandKarteGeneratedModule,
         ModulLandKarteModule
+        
     );
+    shared.lsp.ExecuteCommandHandler = new ModulLandKarteCommandHandler();
     shared.ServiceRegistry.register(ModulLandKarte);
     registerValidationChecks(ModulLandKarte);
     return { shared, ModulLandKarte };

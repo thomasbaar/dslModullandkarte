@@ -9,7 +9,6 @@ MonacoEditorLanguageClientWrapper.addMonacoStyles('monaco-editor-styles');
 const client = new MonacoEditorLanguageClientWrapper();
 const editorConfig = client.getEditorConfig();
 editorConfig.setMainLanguageId('modul-land-karte');
-
 editorConfig.setMonarchTokensProvider(monarchSyntax);
 
 let mainCode = `
@@ -357,7 +356,6 @@ client.setWorker(lsWorker);
 // keep a reference to a promise for when the editor is finished starting, we'll use this to setup the canvas on load
 const startingPromise = client.startEditor(document.getElementById("monaco-editor-root"));
 
-
 // Set a status message to display below the update button
 function setStatus(msg) {
     document.getElementById('status-msg').innerHTML = msg;
@@ -376,63 +374,28 @@ const generateAndDisplay = (() => {
         window.localStorage.setItem('mainCode', value);
     }
     // execute custom command, and receive the response
-    vscode.commands.executeCommand('parseAndGenerate', value).then((minilogoCmds) => {
-        return updateMLKCanvas(minilogoCmds);
+    vscode.commands.executeCommand('parseAndGenerate', value).then((AST) => {
+        return sendAstToVue(AST);
     }).catch((e) => {
-        setStatus(e);
+        setStatus(e.toString());
     }).finally(() => {
         console.info('done...');
         running = false;
     });
 });
 
+function sendAstToVue(AST) {
+    // Sendet den AST an das Quasar-Projekt
+    window.parent.postMessage(AST, 'http://localhost:9000');
+}
+
+
+
+
 // Updates the mini-logo canvas
 window.generateAndDisplay = generateAndDisplay;
 
-// Takes generated MiniLogo commands, and draws on an HTML5 canvas
-function updateMLKCanvas(cmds) {
-    const canvas = document.getElementById('mlk-canvas');
-    const context = canvas.getContext('2d');
 
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    context.beginPath();
-    context.strokeStyle = '#333';
-    for (let x = 0; x <= canvas.width; x+=(canvas.width / 10)) {
-        context.moveTo(x, 0);
-        context.lineTo(x, canvas.height);
-    }
-    for (let y = 0; y <= canvas.height; y+=(canvas.height / 10)) {
-        context.moveTo(0, y);
-        context.lineTo(canvas.width, y);
-    }
-    context.stroke();
-
-    context.strokeStyle = 'white';
-
-    // maintain some state about our drawing context
-    let drawing = false;
-    let posX = 0;
-    let posY = 0;
-
-    const doneDrawingPromise = new Promise((resolve) => {
-        // use the command list to execute each command with a small delay
-        const id = setInterval(() => {
-            if (cmds.length > 0) {
-                //dispatchCommand(cmds.shift(), context);
-            } else {
-                // finish existing draw
-                if (drawing) {
-                    context.stroke();
-                }
-                clearInterval(id);
-                resolve();
-            }
-        }, 1);
-    });
-
-    return doneDrawingPromise;
-}
 
 startingPromise.then(() => {
     generateAndDisplay();

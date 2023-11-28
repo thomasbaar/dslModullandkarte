@@ -17,7 +17,10 @@ Curriculum:
     ('poNumber' poNumber=ID)?
     ('remark' remark=STRING)?
     // ordering of following information is arbitrary
-    (modules+=Module | suppInfo+=SupplementaryCurriculumInformation)*
+    (  modules+=Module 
+     | suppInfo+=SupplementaryCurriculumInformation
+     | topics+=ModuleTopic
+    )*
 ;    
 
 
@@ -46,6 +49,7 @@ SupplementaryCurriculumInformation:
     los=LearningOutcomeSection?
     mos=MandatoryOptionalSection?
     ps=PrerequisiteSection?
+//    mts=ModuleTopicSection?
 ;
 
 LearningOutcomeSection:
@@ -77,14 +81,32 @@ PrerequisiteSection:
 ;
 
 Prerequisite:
-    predec=[Module] '->' succ=[Module] kind=PrerequisiteKind
+    predec=[Module] '->' succ=[Module] kind=PrerequisiteKind 
+//    ('topics' ':' topics+=[ModuleTopic:QualifiedName]*)?  //TODO: instead of QualifiedName better use ScopeProvider 
+ //   ('topics' ':' topics+=[ModuleTopic:ID]*)?  //TODO: instead of QualifiedName better use ScopeProvider 
+    ('topics' ':' tpl=TopicList)?  //TODO: instead of QualifiedName better use ScopeProvider 
+;  
+
+TopicList:
+    topics+=[ModuleTopic:ID] (',' topics+=[ModuleTopic:ID])*  // TODO: comma is necessary due to grammar reasons
 ;    
 
 PrerequisiteKind: val=('necessary' | 'recommended');
 
+/*
+//TODO: Make it possible with scope provider
+ModuleTopicSection:
+    'moduleTopicSection' name=ID //TODO: name is poor man
+    topics+=ModuleTopic*
+;
+*/
+ModuleTopic:
+ 'mt'   module=[Module]  name=ID ':' keywords += STRING*
+; 
 
-
-
+QualifiedName returns string:
+    ID ('.' ID)*
+;    
 
 hidden terminal WS: /\s+/;
 terminal ID: /[_a-zA-Z][\w_]*/;

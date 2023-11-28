@@ -24,11 +24,21 @@ noSemesters 6
 supplementaryCurriculumInformation
 
 prerequisiteSection
-ma1 -> ma2 recommended
+ma1 -> ma2 recommended topics : Mengenlehre, Folgen_Reihen
 fs1 -> fs2 recommended
 et1 -> et2 recommended
 et1 -> ro recommended
 prog1 -> prog2 recommended
+
+//moduleTopicSection
+mt ma1 Mengenlehre : "Menge" "Element" "Vereinigung" 
+mt ma1 Funktionsanalysis : "Relation" "Funktion" "Funktionsdomäne" "Injektion, Surjektion, Bijektion" "Stetigkeit" "Differenzierbarkeit"
+mt ma1 Folgen_Reihen: "Konvergenz, obere Schranke"
+
+
+
+
+
 
 
 //

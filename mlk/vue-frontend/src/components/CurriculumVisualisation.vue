@@ -17,7 +17,7 @@
     </svg>
 
     <div class="vue-flow-container">
-      <VueFlow v-if="isLoaded" :nodes="nodes" :edges="edges" fit-view-on-init>
+      <VueFlow :nodeTypes="nodeTypes" v-if="isLoaded" :nodes="nodes" :edges="edges" fit-view-on-init>
         <MiniMap position="bottom-left" />
         <Controls position="top-right" />
         <Panel position="bottom-right">
@@ -44,20 +44,25 @@ import { VueFlow, Position, MarkerType, Panel } from "@vue-flow/core";
 import { Controls } from "@vue-flow/controls";
 import '@vue-flow/controls/dist/style.css'
 import { MiniMap } from "@vue-flow/minimap";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, markRaw  } from "vue";
 import { useAstStore } from "src/stores/astStore";
 import "@vue-flow/core/dist/style.css";
 import "@vue-flow/core/dist/theme-default.css";
+import DetailedNode from './DetailedNode.vue';
 
 export default {
   name: "CurriculumVisualisation",
-  components: { VueFlow, MiniMap, Panel, Controls },
+  components: { VueFlow, MiniMap, Panel, Controls},
   setup() {
     const astStore = useAstStore();
     const isLoaded = ref(false);
     const nodes = ref([]);
     const edges = ref([]);
     const showEdges = ref(false);
+
+    const nodeTypes = {
+      detailedNode: markRaw(DetailedNode),
+    };
 
 
     const toggleEdges = () => {
@@ -104,7 +109,9 @@ export default {
             .forEach((mod, index) => {
               tempNodes.push({
                 id: mod.name,
-                label: mod.shortName,
+                //label: mod.shortName,
+                type: 'detailedNode',
+                data: { module: mod },
                 position: { x: 25, y: index * 50 + 50 },
                 extent: "parent",
                 parentNode: `semester-${semester}`,
@@ -115,6 +122,7 @@ export default {
         }
 
         nodes.value = tempNodes;
+        console.log(nodes.value);
         updateEdges();
       }
 
@@ -123,7 +131,7 @@ export default {
       }, 50);
     });
 
-    return { nodes, edges, isLoaded, toggleEdges };
+    return { nodes, edges, isLoaded, toggleEdges, nodeTypes };
   },
 };
 </script>

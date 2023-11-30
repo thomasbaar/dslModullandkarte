@@ -57,10 +57,10 @@
     </q-drawer>
 
     <q-page-container >
-      <div v-if="showLangium">
+      <div v-show="showLangium">
         <iframe src="http://localhost:3000" style="width: 1380px; height: 830px;" frameborder="0"></iframe>
       </div>
-      <div v-if="showVisualization">
+      <div v-show="showVisualization">
         <AstVisualizer />
       </div>
       <div v-if="showCurriculum" >

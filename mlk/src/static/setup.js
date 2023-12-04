@@ -24,11 +24,33 @@ noSemesters 6
 supplementaryCurriculumInformation
 
 prerequisiteSection
+// 2. Semester
 ma1 -> ma2 recommended topics : Mengenlehre, Folgen_Reihen
 fs1 -> fs2 recommended
 et1 -> et2 recommended
 et1 -> ro recommended
 prog1 -> prog2 recommended
+// 3. Semester
+prog2 -> adk recommended
+prog1 -> bs recommended
+dt1 -> digitSys recommended
+et1 -> anaelek recommended
+et1 -> lpl recommended
+et2 -> lpl recommended
+ma2 -> sv recommended
+dt1 -> sv recommended
+// 4. Semester
+ro -> mpt recommended
+dt1 -> mpt recommended
+dt1 -> cn recommended
+prog2 -> swt recommended
+prog1 -> sysprog recommended
+swt -> emb recommended
+ma2 -> mrt recommended
+anaelek -> mrt recommended
+// 5. Semester
+swt -> db recommended
+fs2 -> awe recommended
 
 //moduleTopicSection
 mt ma1 Mengenlehre : "Menge" "Element" "Vereinigung" 

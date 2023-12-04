@@ -17,7 +17,7 @@
     </svg>
 
     <div class="vue-flow-container">
-      <VueFlow :nodeTypes="nodeTypes" v-if="isLoaded" :nodes="nodes" :edges="edges" fit-view-on-init>
+      <VueFlow :nodeTypes="nodeTypes" v-if="isLoaded" :nodes="nodes" :edges="edges" fit-view-on-init @edge-click="onEdgeClick">
         <MiniMap position="bottom-left" />
         <Controls position="top-right" />
         <Panel position="bottom-right">
@@ -40,11 +40,11 @@
 </template>
 
 <script>
-import { VueFlow, Position, MarkerType, Panel } from "@vue-flow/core";
+import { VueFlow, Position, MarkerType, Panel, useVueFlow } from "@vue-flow/core";
 import { Controls } from "@vue-flow/controls";
 import '@vue-flow/controls/dist/style.css'
 import { MiniMap } from "@vue-flow/minimap";
-import { ref, onMounted, markRaw  } from "vue";
+import { ref, onMounted, markRaw } from "vue";
 import { useAstStore } from "src/stores/astStore";
 import "@vue-flow/core/dist/style.css";
 import "@vue-flow/core/dist/theme-default.css";
@@ -59,6 +59,7 @@ export default {
     const nodes = ref([]);
     const edges = ref([]);
     const showEdges = ref(false);
+    const vueFlowInstance = useVueFlow();
 
     const nodeTypes = {
       detailedNode: markRaw(DetailedNode),
@@ -85,6 +86,59 @@ export default {
       }
     };
 
+/*const onEdgeClick = (edge) => {
+  const edgeData = edge.edge;
+  const sourceNodeId = edgeData.source;
+  const targetNodeId = edgeData.target;
+
+
+  const sourceNode = nodes.value.find(node => node.id === sourceNodeId);
+  if (sourceNode) {
+    sourceNode.expandedByEdgeClick = !sourceNode.expandedByEdgeClick;
+    console.log(sourceNode)
+  } else {
+    console.log("Source node not found");
+  }
+};
+*/
+
+const onEdgeClick = (edge) => {
+      const edgeData = edge.edge;
+  
+      const sourceNodeId = edgeData.source;
+
+      // Finden Sie die Node im VueFlow-Instanz-Status
+      const node = vueFlowInstance.findNode(sourceNodeId);
+      if (node) {
+        // Aktualisieren Sie die Daten der Node
+            console.log(node.data);
+        node.data = {
+          ...node.data,
+          expandedByEdgeClick: !node.data.expandedByEdgeClick
+        };      
+        }
+    };
+
+/*
+const onEdgeClick = (edge) => {
+  const edgeData = edge.edge;
+  const sourceNodeId = edgeData.source;
+  const nodeIndex = nodes.value.findIndex(node => node.id === sourceNodeId);
+
+  if (nodeIndex !== -1) {
+    const updatedNode = { 
+      ...nodes.value[nodeIndex], 
+      data: { 
+        ...nodes.value[nodeIndex].data, 
+        expandedByEdgeClick: !nodes.value[nodeIndex].data.expandedByEdgeClick 
+      }
+    };
+
+    nodes.value.splice(nodeIndex, 1, updatedNode);
+  }
+};
+*/
+
     onMounted(() => {
       const data = astStore.curriculumData;
       if (data) {
@@ -92,12 +146,12 @@ export default {
         for (let semester = 1; semester <= data.noSemesters; semester++) {
           tempNodes.push({
             id: `semester-${semester}`,
-            label: `Semester ${semester}`,
-            position: { x: (semester - 1) * 250, y: 0 },
+            label: `<span style="font-size: 30px; font-weight: bold;">Semester ${semester}</span>`,
+            position: { x: (semester - 1) * 400, y: 0 },
             style: {
-              width: "200px",
+              width: "300px",
               height: `${
-                data.modules.filter((m) => m.semester === semester).length *50 +60 }px`,
+                data.modules.filter((m) => m.semester === semester).length * 120 + 90 }px`,
               backgroundColor: "rgba(255, 255, 255, 0.5)",
               border: "2px solid",
             },
@@ -111,12 +165,14 @@ export default {
                 id: mod.name,
                 //label: mod.shortName,
                 type: 'detailedNode',
-                data: { module: mod },
-                position: { x: 25, y: index * 50 + 50 },
+                data: { module: mod,
+                expandedByEdgeClick: false },
+                position: { x: 25, y: index * 120 + 80 },
                 extent: "parent",
                 parentNode: `semester-${semester}`,
                 sourcePosition: Position.Right,
                 targetPosition: Position.Left,
+                //draggable: false,
               });
             });
         }
@@ -131,7 +187,7 @@ export default {
       }, 50);
     });
 
-    return { nodes, edges, isLoaded, toggleEdges, nodeTypes };
+    return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick };
   },
 };
 </script>

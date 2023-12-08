@@ -308,7 +308,7 @@ workingHoursPCUE 2
 
 module proj
 officialID "CE71"
-shortName "Projekt"
+shortName "Projekt CSE"
 officialName "Projekt Computer Systems Engineering"
 semester 5
 etcs 5

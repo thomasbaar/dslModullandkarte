@@ -107,10 +107,10 @@ const onEdgeClick = (edge) => {
   
       const sourceNodeId = edgeData.source;
 
-      // Finden Sie die Node im VueFlow-Instanz-Status
+
       const node = vueFlowInstance.findNode(sourceNodeId);
       if (node) {
-        // Aktualisieren Sie die Daten der Node
+
             console.log(node.data);
         node.data = {
           ...node.data,

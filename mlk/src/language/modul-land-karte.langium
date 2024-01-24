@@ -15,6 +15,7 @@ Curriculum:
     'status' status=CurriculumStatus
     'noSemesters' noSemesters=INT
     ('poNumber' poNumber=ID)?
+    ('url' url=STRING)? 
     ('remark' remark=STRING)?
     // ordering of following information is arbitrary
     (  modules+=Module 
@@ -104,9 +105,11 @@ ModuleTopic:
  'mt'   module=[Module]  name=ID ':' keywords += STRING*
 ; 
 
+/*
 QualifiedName returns string:
     ID ('.' ID)*
 ;    
+*/
 
 hidden terminal WS: /\s+/;
 terminal ID: /[_a-zA-Z][\w_]*/;

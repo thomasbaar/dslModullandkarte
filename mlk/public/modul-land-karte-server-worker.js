@@ -185,7 +185,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@18"
+                "$ref": "#/rules@17"
               },
               "arguments": []
             }
@@ -228,7 +228,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@18"
+                "$ref": "#/rules@17"
               },
               "arguments": []
             }
@@ -260,7 +260,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -276,7 +276,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -308,7 +308,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@19"
+                "$ref": "#/rules@18"
               },
               "arguments": []
             }
@@ -327,7 +327,29 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@18"
+                    "$ref": "#/rules@17"
+                  },
+                  "arguments": []
+                }
+              }
+            ],
+            "cardinality": "?"
+          },
+          {
+            "$type": "Group",
+            "elements": [
+              {
+                "$type": "Keyword",
+                "value": "url"
+              },
+              {
+                "$type": "Assignment",
+                "feature": "url",
+                "operator": "=",
+                "terminal": {
+                  "$type": "RuleCall",
+                  "rule": {
+                    "$ref": "#/rules@19"
                   },
                   "arguments": []
                 }
@@ -349,7 +371,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@20"
+                    "$ref": "#/rules@19"
                   },
                   "arguments": []
                 }
@@ -489,7 +511,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@18"
+                "$ref": "#/rules@17"
               },
               "arguments": []
             }
@@ -505,7 +527,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -521,7 +543,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -537,7 +559,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -553,7 +575,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@19"
+                "$ref": "#/rules@18"
               },
               "arguments": []
             }
@@ -569,7 +591,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@19"
+                "$ref": "#/rules@18"
               },
               "arguments": []
             }
@@ -588,7 +610,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -610,7 +632,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -632,7 +654,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -654,7 +676,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -676,7 +698,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -698,7 +720,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@19"
+                    "$ref": "#/rules@18"
                   },
                   "arguments": []
                 }
@@ -830,7 +852,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             }
@@ -1074,7 +1096,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
               "terminal": {
                 "$type": "RuleCall",
                 "rule": {
-                  "$ref": "#/rules@18"
+                  "$ref": "#/rules@17"
                 },
                 "arguments": []
               },
@@ -1100,7 +1122,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
                   "terminal": {
                     "$type": "RuleCall",
                     "rule": {
-                      "$ref": "#/rules@18"
+                      "$ref": "#/rules@17"
                     },
                     "arguments": []
                   },
@@ -1176,7 +1198,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@18"
+                "$ref": "#/rules@17"
               },
               "arguments": []
             }
@@ -1192,50 +1214,10 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@19"
               },
               "arguments": []
             },
-            "cardinality": "*"
-          }
-        ]
-      },
-      "definesHiddenTokens": false,
-      "entry": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "ParserRule",
-      "name": "QualifiedName",
-      "dataType": "string",
-      "definition": {
-        "$type": "Group",
-        "elements": [
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@18"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "Group",
-            "elements": [
-              {
-                "$type": "Keyword",
-                "value": "."
-              },
-              {
-                "$type": "RuleCall",
-                "rule": {
-                  "$ref": "#/rules@18"
-                },
-                "arguments": []
-              }
-            ],
             "cardinality": "*"
           }
         ]

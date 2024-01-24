@@ -6,6 +6,7 @@ function extractCurriculumData(ast) {
     }
 
     const curriculum = ast[0].curriculums[0];
+    const moduleDescriptions = {};
 
     // Extraktion der Modulthemen
     const moduleTopics = {};
@@ -19,6 +20,18 @@ function extractCurriculumData(ast) {
                     topicName: topic.name,
                     keywords: topic.keywords || []
                 });
+            }
+        });
+    }
+
+    // URL extrahieren
+    const url = curriculum.url;
+
+    // Extraktion der Modulbeschreibungen aus der suppInfo
+    if (curriculum.suppInfo && curriculum.suppInfo.length > 1) {
+        curriculum.suppInfo[1].los.outcomes.forEach(outcome => {
+            if (outcome.module && outcome.module.$refText && outcome.val) {
+                moduleDescriptions[outcome.module.$refText] = outcome.val.trim();
             }
         });
     }
@@ -44,6 +57,7 @@ function extractCurriculumData(ast) {
             officialName: mod.officialName,
             semester: mod.semester,
             etcs: mod.etcs,
+            description: moduleDescriptions[mod.name] || '',
             topics: moduleTopics[mod.name] || []  // Hinzufügen der Themen zu jedem Modul
         };
     });
@@ -53,6 +67,7 @@ function extractCurriculumData(ast) {
         displayShortName: curriculum.displayShortName,
         fullName: curriculum.fullName,
         noSemesters: curriculum.noSemesters,
+        url: url,
         modules: extractedModules,
         suppInfo: extractedSuppInfo
     };

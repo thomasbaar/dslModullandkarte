@@ -1,7 +1,7 @@
 <template>
-  <q-card @click="toggleExpanded" class="detailed-node" :class="{ 'expanded': isExpanded, 
-  'edge-clicked': expandedByEdgeClick && !isExpanded, 'not-expanded': !isExpanded && !expandedByEdgeClick }">    
-  <q-card-section class="text-center" v-if="!isExpanded && !expandedByEdgeClick">
+  <q-card class="detailed-node" :class="{ 'expanded': isExpanded, 
+  'edge-clicked': expandedByEdgeClick && !isExpanded, 'not-expanded': !isExpanded && !expandedByEdgeClick }">
+    <q-card-section class="text-center" v-if="!isExpanded && !expandedByEdgeClick" @click="toggleExpanded">
       <span style="font-size: 18px; font-weight: bold;">{{nodeData.module.shortName}} </span>
     </q-card-section>
 
@@ -25,6 +25,9 @@
   </q-card-section>
 
     <q-card-section v-else class="expanded-content">
+      <div class="close-icon" >
+    <q-icon name="close" size="24px" @click="toggleExpanded" />
+  </div>
        <div class="text-h5 text-center node-title">{{ nodeData.module.shortName }}</div>
       <q-table
         class="table"
@@ -33,12 +36,43 @@
         row-key="label"
         flat
         bordered
+        wrap-cells
         :hide-header="true"
         :hide-bottom="true"
         no-data-label="No data available"
         :rows-per-page-options="[0]"
         separator="cell"
-      ></q-table>
+      >
+      <template v-slot:body="props">
+  <q-tr :props="props" class="row-padding">
+    <q-td v-for="col in props.cols" :key="col.name" :props="props">
+      <template v-if="col.name === 'value'">
+
+        <div v-if="props.row.label !== 'Lernergebnis/Kompetenzen'">
+          {{ props.row.value }}
+        </div>
+        <div v-else>
+          <span v-if="!expandedDescriptions.has(props.row.label)">
+            {{ props.row.value }}
+          </span>
+          <span v-else>
+            {{ props.row.fullDescription }}
+          </span>
+          <q-icon
+            name="expand_more"
+            class="cursor-pointer"
+            @click.stop="toggleDescription(props.row)"
+          />
+        </div>
+      </template>
+      <template v-else>
+        {{ props.row[col.field] }}
+      </template>
+    </q-td>
+  </q-tr>
+</template>
+
+    </q-table>
     </q-card-section>
     <Handle type="target" position="left" />
     <Handle type="source" position="right" />
@@ -55,7 +89,8 @@ export default defineComponent({
     QCard,
     QCardSection,
     QTable,
-    Handle
+    Handle,
+     
   },
   props: {
     data: {
@@ -81,6 +116,12 @@ export default defineComponent({
       return [
         { label: 'Official ID', value: mod.officialID || 'TBD' },
         { label: 'Official Name', value: mod.officialName || 'TBD' },
+        {
+        label: 'Lernergebnis/Kompetenzen',
+        value: mod.description ? mod.description.slice(0, 50) + '...' : 'Keine Beschreibung verfügbar.',
+        fullDescription: mod.description || 'Keine Beschreibung verfügbar.',
+        isDescriptionExpanded: false
+        },
         { label: 'Verwendbarkeit des Moduls', value: 'TBD' },
         { label: 'Anerkannte Module', value: 'TBD' },
         { label: 'Pflicht / Wahlfplicht', value: 'Pflicht' },
@@ -92,6 +133,19 @@ export default defineComponent({
         { label: 'EV', value: 'TBD' },
       ];
     });
+    
+    const expandedDescriptions = ref(new Set());
+
+    const toggleDescription = (row) => {
+      const key = row.label;
+      if (expandedDescriptions.value.has(key)) {
+        expandedDescriptions.value.delete(key);
+      } else {
+        expandedDescriptions.value.add(key);
+      }
+      expandedDescriptions.value = new Set(expandedDescriptions.value);
+    };
+
 
     const topicsTableData = computed(() => {
       return props.data.module.topics.map(topic => ({
@@ -104,7 +158,7 @@ export default defineComponent({
       console.log('expandedByEdgeClick changed:', newValue);
     });
 */
-    return { nodeData: props.data, isExpanded, toggleExpanded, columns, tableData, expandedByEdgeClick, topicsTableData };
+    return { nodeData: props.data, isExpanded, toggleExpanded, columns, tableData, expandedByEdgeClick, topicsTableData, expandedDescriptions, toggleDescription };
   },
 });
 </script>
@@ -125,8 +179,9 @@ export default defineComponent({
 }
 
 .detailed-node.expanded {
-   padding: 0px;
-   font-weight: bold;
+  max-width: 500px;
+  padding: 0px;
+  font-weight: bold;
 }
 
 .table {
@@ -140,6 +195,13 @@ export default defineComponent({
 .node-title {
   margin-bottom: 15px; 
   font-weight: bold;
+}
+
+.close-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
 }
 
 </style>

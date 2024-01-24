@@ -12,7 +12,11 @@
         />
 
         <q-toolbar-title>
-          Modullandkarte
+          Modullandkarte:
+          <template v-if="showCurriculum">
+            <a :href="curriculumData.url" target="_blank" class="curriculum-link">
+              Link zum aktuell dargestellten Curriculum            </a>
+          </template>
         </q-toolbar-title>
 
         <div style="font-size: 1.5em;">HTW Berlin</div>
@@ -71,9 +75,11 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 import AstVisualizer from 'src/components/AstVisualizer.vue'
 import CurriculumVisualisation from 'src/components/CurriculumVisualisation.vue'
+import { useAstStore } from '../stores/astStore.js';
+
 
 export default defineComponent({
   name: 'MainLayout',
@@ -84,6 +90,10 @@ export default defineComponent({
   },
 
   setup() {
+
+    const astStore = useAstStore();
+    const curriculumData = computed(() => astStore.curriculumData);
+
     const leftDrawerOpen = ref(false);
     const showLangium = ref(true);
     const showVisualization = ref(false);
@@ -94,6 +104,7 @@ export default defineComponent({
     }
 
     return {
+      curriculumData,
       leftDrawerOpen,
       showLangium,
       showVisualization,
@@ -108,4 +119,15 @@ export default defineComponent({
 .menu-header {
   color: black;
 }
+
+.curriculum-link {
+  margin-left: 8px;
+  color: white;
+  text-decoration: underline;
+}
+
+.curriculum-link:hover {
+  color: #e0e0e0;
+}
+
 </style>

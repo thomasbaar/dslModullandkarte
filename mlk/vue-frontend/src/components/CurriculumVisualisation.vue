@@ -11,8 +11,7 @@
 
     <div class="vue-flow-container">
       <VueFlow :nodeTypes="nodeTypes" v-if="isLoaded" :nodes="nodes" :edges="edges" fit-view-on-init
-        @edge-click="onEdgeClick">
-        <MiniMap position="bottom-left" />
+        @edge-click="onEdgeClick" @node-click="onNodeClick">
         <Controls position="top-right" />
         <Panel position="bottom-right">
           <label class="toggle-label">
@@ -40,16 +39,16 @@
 import { VueFlow, Position, MarkerType, Panel, useVueFlow } from "@vue-flow/core";
 import { Controls } from "@vue-flow/controls";
 import '@vue-flow/controls/dist/style.css'
-import { MiniMap } from "@vue-flow/minimap";
 import { ref, onMounted, markRaw, computed, watch } from "vue";
 import { useAstStore } from "src/stores/astStore";
 import "@vue-flow/core/dist/style.css";
 import "@vue-flow/core/dist/theme-default.css";
-import DetailedNode from './DetailedNode.vue';
+import ExpandedNode from './ExpandedNode.vue';
+import EdgeNode from './EdgeNode.vue';
 
 export default {
   name: "CurriculumVisualisation",
-  components: { VueFlow, MiniMap, Panel, Controls },
+  components: { VueFlow, Panel, Controls },
   setup() {
     const astStore = useAstStore();
     const isLoaded = ref(false);
@@ -58,18 +57,18 @@ export default {
     const showEdges = ref(false);
     const selectedSemesters = ref([]);
     const vueFlowInstance = useVueFlow();
+    const specialNodeVisible = ref(false);
 
     const noSemesters = computed(() => astStore.curriculumData?.noSemesters || 0);
 
     const nodeTypes = {
-      detailedNode: markRaw(DetailedNode),
+      expandedNode: markRaw(ExpandedNode),
+      edgeNode: markRaw(EdgeNode),
     };
 
 
     const toggleEdges = () => {
       showEdges.value = !showEdges.value;
-      //Watcher takes care of updating edges
-      //updateEdges();
     };
 
     watch([selectedSemesters, showEdges], () => {
@@ -82,6 +81,91 @@ export default {
       } else {
         selectedSemesters.value.push(semester);
       }
+    };
+
+    const createSpecialNode = (nodeId, type) => {
+      const moduleData = astStore.curriculumData.modules.find(m => m.name === nodeId);
+      if (moduleData) {
+        const newNodeId = `${nodeId}-${type}`;
+        const newNodeData = { ...moduleData, nodeId: newNodeId, handleClose: onSpecialNodeClose };
+
+        const newNode = {
+          id: newNodeId,
+          type: type,
+          data: newNodeData,
+          position: { x: 200, y: 0 },
+          hidden: false
+        };
+        nodes.value.push(newNode);
+
+        nodes.value.forEach(n => n.hidden = n.id !== newNodeId);
+        edges.value.forEach(e => e.hidden = true);
+        specialNodeVisible.value = true;
+      }
+    };
+
+    const onSpecialNodeClose = (nodeId) => {
+      console.log("Close Special Node", nodeId);
+      nodes.value = nodes.value.filter(n => n.id !== nodeId);
+      resetView();
+    };
+
+    const createEdgeNodes = (sourceNodeId, targetNodeId) => {
+      const sourceModuleData = astStore.curriculumData.modules.find(m => m.name === sourceNodeId);
+      const targetModuleData = astStore.curriculumData.modules.find(m => m.name === targetNodeId);
+
+      if (sourceModuleData && targetModuleData) {
+
+        const sourceNewNodeId = `${sourceNodeId}-edgeNode`;
+        const targetNewNodeId = `${targetNodeId}-edgeNode`;
+
+        const sourceNewNodeData = { ...sourceModuleData, nodeId: sourceNewNodeId, handleClose: closeAllEdgeNodes };
+        const targetNewNodeData = { ...targetModuleData, nodeId: targetNewNodeId, handleClose: closeAllEdgeNodes };
+
+        const sourceNewNode = {
+          id: sourceNewNodeId,
+          type: 'edgeNode',
+          data: sourceNewNodeData,
+          position: { x: 100, y: 0 },
+          hidden: false
+        };
+
+        const targetNewNode = {
+          id: targetNewNodeId,
+          type: 'edgeNode',
+          data: targetNewNodeData,
+          position: { x: 700, y: 0 },
+          hidden: false
+        };
+        nodes.value.push(sourceNewNode, targetNewNode);
+        nodes.value.forEach(n => n.hidden = (n.id !== sourceNewNodeId && n.id !== targetNewNodeId));
+        edges.value.forEach(e => e.hidden = true);
+        specialNodeVisible.value = true;
+      }
+    };
+
+    const closeAllEdgeNodes = () => {
+      nodes.value = nodes.value.filter(n => !n.id.includes('edgeNode'));
+      resetView();
+    };
+
+
+    const onNodeClick = (event) => {
+      //console.log("Klick-Event:", event);
+      const node = event?.node;
+      //console.log("Geklickter Node:", node);
+
+
+      if (node && node.id && node.type === 'default') {
+        createSpecialNode(node.id, 'expandedNode');
+      } else {
+        //console.error('Ungültiges Node-Objekt oder nicht-Standard Node-Typ', node);
+      }
+    };
+
+    const onEdgeClick = (edge) => {
+      const edgeData = edge.edge;
+      createEdgeNodes(edgeData.source, edgeData.target);
     };
 
     const updateEdges = () => {
@@ -97,45 +181,13 @@ export default {
               target: supp.succ,
               markerEnd: { type: MarkerType.Arrow, color: "green" },
               style: { strokeWidth: "3px", stroke: "green" },
+              hidden: false
             }];
           }
           return [];
         });
       } else {
         edges.value = [];
-      }
-    };
-
-
-
-    /*const onEdgeClick = (edge) => {
-      const edgeData = edge.edge;
-      const sourceNodeId = edgeData.source;
-      const targetNodeId = edgeData.target;
-    
-      const sourceNode = nodes.value.find(node => node.id === sourceNodeId);
-      if (sourceNode) {
-        sourceNode.expandedByEdgeClick = !sourceNode.expandedByEdgeClick;
-        console.log(sourceNode)
-      } else {
-        console.log("Source node not found");
-      }
-    };
-    */
-
-    const onEdgeClick = (edge) => {
-      const edgeData = edge.edge;
-
-      const sourceNodeId = edgeData.source;
-
-      const node = vueFlowInstance.findNode(sourceNodeId);
-      if (node) {
-
-        console.log(node.data);
-        node.data = {
-          ...node.data,
-          expandedByEdgeClick: !node.data.expandedByEdgeClick
-        };
       }
     };
 
@@ -148,9 +200,10 @@ export default {
             id: `semester-${semester}`,
             label: `<span style="font-size: 30px; font-weight: bold;">Semester ${semester}</span>`,
             position: { x: (semester - 1) * 400, y: 0 },
+            hidden: false,
             style: {
               width: "300px",
-              height: `${data.modules.filter((m) => m.semester === semester).length * 120 + 90}px`,
+              height: `${data.modules.filter((m) => m.semester === semester).length * 80 + 70}px`,
               backgroundColor: "rgba(255, 255, 255, 0.5)",
               border: "2px solid",
             },
@@ -162,13 +215,20 @@ export default {
             .forEach((mod, index) => {
               tempNodes.push({
                 id: mod.name,
-                //label: mod.shortName,
-                type: 'detailedNode',
+                label: `<div style="font-size: 20px; text-align: center;">${mod.shortName}</div>`,
+                hidden: false,
+                //type: 'detailedNode',
+                style: {
+                  width: "250px",
+                  height: `50px`,
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  border: "1px solid",
+                },
                 data: {
                   module: mod,
                   expandedByEdgeClick: false
                 },
-                position: { x: 25, y: index * 120 + 80 },
+                position: { x: 25, y: index * 80 + 70 },
                 extent: "parent",
                 parentNode: `semester-${semester}`,
                 sourcePosition: Position.Right,
@@ -188,7 +248,13 @@ export default {
       }, 50);
     });
 
-    return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick, noSemesters, selectedSemesters, updateEdges, handleSemesterChange };
+    const resetView = () => {
+      nodes.value.forEach(n => n.hidden = false);
+      edges.value.forEach(e => e.hidden = false);
+      specialNodeVisible.value = false;
+    };
+
+    return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick, noSemesters, selectedSemesters, updateEdges, handleSemesterChange, onNodeClick, onSpecialNodeClose, closeAllEdgeNodes };
   },
 };
 </script>

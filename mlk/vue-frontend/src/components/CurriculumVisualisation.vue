@@ -14,20 +14,34 @@
         @edge-click="onEdgeClick" @node-click="onNodeClick">
         <Controls position="top-right" />
         <Panel position="bottom-right">
-          <label class="toggle-label">
-            <input type="checkbox" class="toggle-checkbox" />
-            Show NV
-          </label>
-          <div>
-            <span>Filter Semester:</span>
-            <q-checkbox v-for="i in noSemesters" :key="i" :label="`${i}`" v-model="selectedSemesters" :val="`${i}`" />
+
+          <div class="toggle-label">
+            <div>
+              <input type="checkbox" class="toggle-checkbox" id="show-ev-checkbox" @change="toggleEdges" />
+              <label for="show-ev-checkbox">Show EV</label>
+            </div>
+
+            <div class="filter-semester">
+              <span>Filter Semester:</span>
+              <div class="checkbox-container">
+                <q-checkbox label="Alle Semester" v-model="allSemestersChecked"
+                  @update:model-value="toggleAllSemesters" />
+                <label for="alle-semester-checkbox" class="checkbox-label"></label>
+              </div>
+              <div>
+                <q-checkbox v-for="semester in semesterList" :key="semester" :label="`${semester}`"
+                  v-model="selectedSemesters" :val="`${semester}`" />
+              </div>
+            </div>
           </div>
 
 
 
+
+
           <label class="toggle-label">
-            <input type="checkbox" class="toggle-checkbox" @change="toggleEdges" />
-            Show EV
+            <input type="checkbox" class="toggle-checkbox" />
+            Show NV
           </label>
         </Panel>
       </VueFlow>
@@ -61,10 +75,79 @@ export default {
 
     const noSemesters = computed(() => astStore.curriculumData?.noSemesters || 0);
 
+    const semesterList = computed(() => {
+      // Erstellt ein Array von 1 bis noSemesters
+      return Array.from({ length: astStore.curriculumData?.noSemesters || 0 }, (_, i) => i + 1);
+    });
+
+    const toggleAllSemesters = (isChecked) => {
+      if (isChecked) {
+        selectedSemesters.value = semesterList.value.map(i => `${i}`);
+      } else {
+        selectedSemesters.value = [];
+      }
+    };
+
+    const allSemestersChecked = computed({
+      get: () => selectedSemesters.value.length === semesterList.value.length,
+      set: (isChecked) => {
+        selectedSemesters.value = isChecked ? semesterList.value.map(String) : [];
+      },
+    });
+
     const nodeTypes = {
       expandedNode: markRaw(ExpandedNode),
       edgeNode: markRaw(EdgeNode),
     };
+
+    const { onEdgeMouseEnter, onEdgeMouseLeave } = vueFlowInstance;
+
+    onEdgeMouseEnter((event) => {
+      const edgeId = event.edge.id;
+      const index = edges.value.findIndex(e => e.id === edgeId);
+      if (index !== -1) {
+
+        const updatedEdge = {
+          ...edges.value[index],
+          style: {
+            ...edges.value[index].style,
+            stroke: 'red',
+            strokeWidth: 6
+          },
+          markerEnd: {
+            type: MarkerType.Arrow,
+            color: "red"
+          }
+        };
+
+        edges.value = [...edges.value.slice(0, index), updatedEdge, ...edges.value.slice(index + 1)];
+      }
+    });
+
+    onEdgeMouseLeave((event) => {
+      const edgeId = event.edge.id;
+      const index = edges.value.findIndex(e => e.id === edgeId);
+      if (index !== -1) {
+
+        const updatedEdge = {
+          ...edges.value[index],
+          style: {
+            ...edges.value[index].style,
+            stroke: 'green',
+            strokeWidth: 3
+          },
+          markerEnd: {
+            type: MarkerType.Arrow,
+            color: "green"
+          }
+        };
+        edges.value = [...edges.value.slice(0, index), updatedEdge, ...edges.value.slice(index + 1)];
+      }
+    });
+
+
+
+
 
 
     const toggleEdges = () => {
@@ -75,13 +158,10 @@ export default {
       updateEdges();
     });
 
-    const handleSemesterChange = (semester) => {
-      if (selectedSemesters.value.includes(semester)) {
-        selectedSemesters.value = selectedSemesters.value.filter(s => s !== semester);
-      } else {
-        selectedSemesters.value.push(semester);
-      }
-    };
+
+
+
+
 
     const createSpecialNode = (nodeId, type) => {
       const moduleData = astStore.curriculumData.modules.find(m => m.name === nodeId);
@@ -254,7 +334,7 @@ export default {
       specialNodeVisible.value = false;
     };
 
-    return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick, noSemesters, selectedSemesters, updateEdges, handleSemesterChange, onNodeClick, onSpecialNodeClose, closeAllEdgeNodes };
+    return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick, noSemesters, selectedSemesters, semesterList, toggleAllSemesters, allSemestersChecked, updateEdges, onNodeClick, onSpecialNodeClose, closeAllEdgeNodes };
   },
 };
 </script>
@@ -263,24 +343,35 @@ export default {
 .vue-flow-container {
   background-color: #f8f8f8;
   width: 1620px;
-  height: 875px;
+  height: 89vh;
 }
 
 .toggle-label {
-  display: flex;
-  align-items: center;
+  display: block;
   background-color: green;
   color: white;
-  padding: 15px 30px;
+  padding: 15px;
   border: none;
   border-radius: 5px;
-  font-size: 24px;
-  cursor: pointer;
   margin-bottom: 5px;
+  box-sizing: border-box;
 }
 
+.filter-semester {
+  margin-top: 10px;
+}
+
+
 .toggle-checkbox {
-  margin-right: 15px;
+  margin-right: 10px;
   transform: scale(1.5);
+  cursor: pointer;
+}
+
+.toggle-label span,
+.toggle-label label {
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
 }
 </style>

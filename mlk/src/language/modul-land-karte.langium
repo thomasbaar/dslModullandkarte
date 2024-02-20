@@ -36,7 +36,7 @@ Module:
     'officialName' officialName=STRING
     'semester' semester=INT
     'etcs' etcs=INT
-    ('workingHoursSL' workingHourSL=INT)?
+    ('workingHoursSL' workingHoursSL=INT)?
     ('workingHoursBUE' workingHoursBUE=INT)?
     ('workingHoursPUE' workingHoursPUE=INT)?
     ('workingHoursPCUE' workingHoursPCUE=INT)?

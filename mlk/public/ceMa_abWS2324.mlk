@@ -1,0 +1,620 @@
+model ceMaster_ab_ws2324
+
+curriculum ce_ma
+type master
+displayShortName "CE(MA)"
+fullName "Computer Engineering (PO ..., ab WS 2023/2024)"
+status running
+noSemesters 4
+url "https://www.htw-berlin.de/fileadmin/HTW/Zentral/Rechtsstelle/Amtliche_Mitteilungsblaetter/2023/17_23.pdf"
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                  _____                  _____       __      
+//|  \/  |         | |     | |                /  ___|                |_   _|     / _|     
+//| .  . | ___   __| |_   _| | ___  ___ ______\ `--. _   _ _ __  _ __  | | _ __ | |_ ___  
+//| |\/| |/ _ \ / _` | | | | |/ _ \/ __|______|`--. \ | | | '_ \| '_ \ | || '_ \|  _/ _ \ 
+//| |  | | (_) | (_| | |_| | |  __/\__ \      /\__/ / |_| | |_) | |_) || || | | | || (_) |
+//\_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_| .__/| .__/\___/_| |_|_| \___/ 
+//                                                        | |   | |                       
+//////////////////////////////////////////////////////////
+
+
+
+supplementaryCurriculumInformation
+
+prerequisiteSection
+// 2. Semester
+projeng -> proj1 recommended 
+
+emblinux -> ecssel recommended 
+vv -> ecssel recommended 
+
+emblinux -> ecscodes recommended 
+vv -> ecscodes recommended 
+
+emblinux -> scssel recommended 
+vv -> scssel recommended 
+
+emblinux -> scslogic recommended 
+vv -> scslogic recommended 
+
+
+
+// 3. Semester
+
+projeng -> proj2 recommended 
+proj1 -> proj2 recommended 
+
+emblinux -> ecsrt recommended 
+vv -> ecsrt recommended 
+
+emblinux -> ecssig recommended 
+vv -> ecssig recommended 
+
+emblinux -> scsdep recommended 
+vv -> scsdep recommended 
+
+emblinux -> scsdsl recommended 
+vv -> scsdsl recommended 
+
+
+// 4. Semester
+
+
+
+
+
+
+//moduleTopicSection
+
+
+
+
+
+
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                 ______           _     ______      _        
+// |  \/  |         | |     | |                | ___ \         (_)    |  _  \    | |       
+// | .  . | ___   __| |_   _| | ___  ___ ______| |_/ / __ _ ___ _  ___| | | |__ _| |_ __ _ 
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|______| ___ \/ _` / __| |/ __| | | / _` | __/ _` |
+// | |  | | (_) | (_| | |_| | |  __/\__ \      | |_/ / (_| \__ \ | (__| |/ / (_| | || (_| |
+// \_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_|___/_|\___|___/ \__,_|\__\__,_|
+//                                                                                        
+//////////////////////////////////////////////////////////
+
+
+//
+// Semester 1
+//
+module vis
+officialID "M1"
+shortName "Computer Vision"
+officialName "Computer Vision"
+semester 1
+etcs 7
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module projeng
+officialID "M2"
+shortName "Project Engineering"
+officialName "Project Engineering"
+semester 1
+etcs 7
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module emblinux
+officialID "M3"
+shortName "Embedded Linux"
+officialName "Embedded Linux"
+semester 1
+etcs 6
+workingHoursPUE 2
+workingHoursLPr 2
+
+module vv
+officialID "M4"
+shortName "Verification Validation"
+officialName "Verification Validation"
+semester 1
+etcs 6
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module supp1
+officialID "M5"
+shortName "Supplementary Module 1"
+officialName "Supplementary Module 1"
+semester 1
+etcs 2
+workingHoursPUE 2
+
+module supp2
+officialID "M6"
+shortName "Supplementary Module 2"
+officialName "Supplementary Module 2"
+semester 1
+etcs 2
+workingHoursPUE 2
+
+
+
+//
+// Semester 2
+//
+
+module esld
+officialID "M7"
+shortName "El. Sys. Level Design"
+officialName "Electronic System Level Design"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module ma
+officialID "M8"
+shortName "Applied Mathematics"
+officialName "Applied Mathematics"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module proj1
+officialID "M9"
+shortName "CE-Projekt 1"
+officialName "CE-Projekt 1"
+semester 2
+etcs 10
+workingHoursPS 5
+
+/*  
+// commented out as they were placeholders for track-specific courses
+module wp1
+officialID "M10"
+shortName "WP-Modul 1"
+officialName "WP-Modul 1"
+semester 2
+etcs 5
+workingHoursPUE 4
+
+module wp2
+officialID "M11"
+shortName "WP-Modul 2"
+officialName "WP-Modul 2"
+semester 2
+etcs 5
+workingHoursPUE 4
+
+*/
+
+
+module ecssel
+officialID "M100"
+shortName "ECS: Sel. Topics"
+officialName "Selected Topics in ECS"
+semester 2
+etcs 5
+workingHoursPUE 3
+
+module ecscodes
+officialID "M101"
+shortName "ECS: HW/SW Co-Design"
+officialName "Hardware/Software Co-Design"
+semester 2
+etcs 5
+workingHoursPUE 4
+
+module scssel
+officialID "M200"
+shortName "SCS: Sel. Topics"
+officialName "Selected Topics in SCS"
+semester 2
+etcs 5
+workingHoursPUE 3
+
+module scslogic
+officialID "M201"
+shortName "SCS: Applied Logic"
+officialName "Applied Logic"
+semester 2
+etcs 5
+workingHoursPUE 4
+
+
+
+
+
+//
+// Semester 3
+//
+
+module dsys
+officialID "M12"
+shortName "Distributed Systems"
+officialName "Distributed Systems"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module mbsys
+officialID "M13"
+shortName "Model Based Systems"
+officialName "Model Based Systems"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module proj2
+officialID "M14"
+shortName "CE-Projekt 2"
+officialName "CE-Projekt 2"
+semester 3
+etcs 10
+workingHoursPS 5
+
+
+/*  
+// commented out as they were placeholders for track-specific courses
+
+module wp3
+officialID "M15"
+shortName "WP-Modul 3"
+officialName "WP-Modul 3"
+semester 3
+etcs 5
+workingHoursPUE 4
+
+module wp4
+officialID "M16"
+shortName "WP-Modul 4: Sel. Top."
+officialName "WP-Modul 4: Selected Topics"
+semester 3
+etcs 5
+workingHoursPUE 3
+
+*/
+
+module ecsrt
+officialID "M102"
+shortName "ECS: RT Systems"
+officialName "Realtime Systems"
+semester 3
+etcs 5
+workingHoursPUE 4
+
+module ecssig
+officialID "M103"
+shortName "ECS: Adv. Signal Proc."
+officialName "Advanced Signal Processing"
+semester 3
+etcs 5
+workingHoursPUE 4
+
+module scsdep
+officialID "M202"
+shortName "SCS: Dep. Systems"
+officialName "Dependable Systems"
+semester 3
+etcs 5
+workingHoursPUE 4
+
+module scsdsl
+officialID "M203"
+shortName "SCS: DSLs"
+officialName "Domain Specific Languages"
+semester 3
+etcs 5
+workingHoursPUE 4
+
+
+
+
+//
+// Semester 4
+//
+
+module masterthesis
+officialID "M17"
+shortName "Master's Thesis"
+officialName "Master's Thesis"
+semester 4
+etcs 25
+
+module oralexam
+officialID "M18"
+shortName "Oral Exam/Seminar"
+officialName "Final Oral Examination with Master's Thesis Seminar"
+semester 4
+etcs 5
+//workingHoursPS 1,5  // TODO: allow non-integer
+workingHoursPS 1
+
+
+
+
+
+//
+// _____                   _                           _                  _____       __      
+///  ___|                 | |                         | |                |_   _|     / _|     
+//\ `--. _   _ _ __  _ __ | | ___ _ __ ___   ___ _ __ | |_ __ _ _ __ _   _ | | _ __ | |_ ___  
+// `--. \ | | | '_ \| '_ \| |/ _ \ '_ ` _ \ / _ \ '_ \| __/ _` | '__| | | || || '_ \|  _/ _ \ 
+///\__/ / |_| | |_) | |_) | |  __/ | | | | |  __/ | | | || (_| | |  | |_| || || | | | || (_) |
+//\____/ \__,_| .__/| .__/|_|\___|_| |_| |_|\___|_| |_|\__\__,_|_|   \__, \___/_| |_|_| \___/ 
+//            | |   | |                                               __/ |                   
+//            |_|   |_|                                              |___/                    
+//
+
+
+
+supplementaryCurriculumInformation
+
+
+//
+// _                           _             _____       _                           _____           _   _             
+//| |                         (_)           |  _  |     | |                         /  ___|         | | (_)            
+//| |     ___  __ _ _ __ _ __  _ _ __   __ _| | | |_   _| |_ ___ ___  _ __ ___   ___\ `--.  ___  ___| |_ _  ___  _ __  
+//| |    / _ \/ _` | '__| '_ \| | '_ \ / _` | | | | | | | __/ __/ _ \| '_ ` _ \ / _ \`--. \/ _ \/ __| __| |/ _ \| '_ \ 
+//| |___|  __/ (_| | |  | | | | | | | | (_| \ \_/ / |_| | || (_| (_) | | | | | |  __/\__/ /  __/ (__| |_| | (_) | | | |
+//\_____/\___|\__,_|_|  |_| |_|_|_| |_|\__, |\___/ \__,_|\__\___\___/|_| |_| |_|\___\____/ \___|\___|\__|_|\___/|_| |_|
+//                                      __/ |                                                                          
+//                                     |___/                                                                           
+
+
+learningOutcomeSection
+
+
+//
+// Semester 1
+//
+vis
+"
+Die Studierenden
+* kennen und verstehen Methoden der digitalen Bildgewinnung, Bild- und Videoverarbeitung einschließlich der physikalischen Grundlagen und der typischen beteiligten Hardwarekomponenten und -schnittstellen,
+* können für grundlegende Aufgabenstellungen der Bild- und Videoverarbeitung passende Algorithmen und Bibliotheken auswählen, daraus lauffähige Softwarelösungen entwickeln und diese im Labor erfolgreich verifizieren. Bei der Methodenauswahl finden sowohl klassische Methoden als auch Methoden des Machine Learning Berücksichtigung,
+* kennen und berücksichtigen beim Lösungsentwurf typische Performance-parameter wie Bildgrößen, Bildraten, Speicherplatzbedarf und Laufzeitverhalten,
+* können dadurch ihre Lösungsansätze auch für den Einsatz auf ressourcen-beschränkten eingebetteten Systemen optimieren.
+"
+
+projeng
+"
+Die Studierenden
+* wissen um die Startphase eines Projekts,
+* kennen die notwendigen Planungsschritte von der Spezifikation über das Lastenheft bis zum Pflichtenheft und führen diese projektspezifisch durch,
+* recherchieren, vergleichen Lösungsmöglichkeiten und entscheiden sich für die zu realisierende Variante,
+* wählen notwendige Komponenten aus und entwerfen erste prototyphafte Lösungsansätze,
+* realisieren die Aufgabenplanung, Dokumentation, Versionsverwaltung und Kommunikation über einen Projektmanagementserver.
+"
+
+emblinux
+"
+Die Studierenden
+* kennen Werkzeuge zur Erstellung projektspezifisch angepasster Systemsoftware für Linux-basierte eingebettete Systeme wie z.B. buildroot und Yocto Project / Open Embedded,
+* kennen und verstehen die Bootphasen eines Linux-basierten eingebetteten Systems im Zusammenwirken von Hardware, Bootloader und Betriebssystem,
+* kennen und verstehen den Aufbau und die Funktionsweise von Linux Kernel-Modulen und deren typischen Schnittstellen zu Anwendungssoftware,
+* können Linux-basierte eingebettete Systeme projektspezifisch entwicklen, um passende Hard- und Softwarekomponenten erweitern und diese im Labor praktisch in Betrieb nehmen.
+"
+
+vv
+"
+Die Studierenden
+* kennen die Prinzipien und Methoden der Validierung und Verifikation in der Projektarbeit,
+* wissen, wie mittels Validierung das erstellte Produkt gegen seine Spezifikation geprüft werden kann,
+* wenden hinsichtlich der Verifikation Techniken zur Funktionsüberprüfung von Hard- und Softwarekomponenten an,
+* erwerben Kompetenzen zum systemtechnischen Denken und Handeln
+* festigen ihre Fähigkeit einen Gesamtprozess kritisch zu analysieren.
+"
+
+supp1 
+"
+Fachspezifisch.
+"
+
+supp2
+"
+Fachspezifisch.
+"
+
+
+
+
+//
+// Semester 2
+//
+
+esld
+"
+Die Studierenden
+* können komplexe digitale Systeme auf Basis von Hard- und Soft-IP Komponenten entwerfen und diese auf z. B. auf System-On-Chip FPGAs technisch umsetzen,
+* kennen System-On-Chip Bus-Architekturen wie AXI Interconnect bzw. AXI Stream Interface,
+* kennen Konzepte wie Direct Memory Access bzw. Memory Mapped Access und können diese anwenden,
+* kennen neben der effizienten Realisierung der arithmetischen Basisoperationen auch grundlegende Architekturen der digitalen Signalverarbeitung für hochratige Anwendungen,
+* kennen Konzepte zur Leistungssteigerung wie Parallelisierung, Mehrfachnutzung und Fließbandverarbeitung sowie Grundzüge der quantitativen Optimierung und können diese einschätzen und anwenden.
+"
+
+ma
+"
+Die Studierenden
+* beherrschen die mathematischen Grundlagen zur Beschreibung Digitaler Signale,
+* lösen mit mathematischen Mitteln ausgewählte Aufgaben aus dem Bereich der Systemtheorie,
+* können folgende mathematische Themen sicher anwenden:
+o Diskrete Fourier-Transformation (DFT/FFT), Diskrete Korrelation,
+o Laplace-Transformation,
+o Z - Transformation.
+"
+
+proj1
+"
+Die Studierenden
+* können Anforderungen aus einem Pflichtenheft in detaillierte Arbeitsaufgaben umsetzen, die vorrangig der Konzeptphase und der Entwurfsphase einer (prototyphaften) Produktentwicklung zuzuordnen sind,
+* kennen Projektmanagementwerkzeuge,
+* können diese im Rahmen eines konkret durchzuführenden Projektes erfolgreich anwenden um den Projektfortschritt und die Arbeitsergebnisse nachvollziehbar zu dokumentieren.
+"
+
+/*
+wp1
+"
+"
+
+wp2
+"
+"
+*/
+
+
+ecssel
+"
+Die Studierenden
+* vertiefen sich erfolgreich in ein wechselndes, aktuelles Gebiet aus dem Themenspektrum des Computer Engineering mit Schwerpunkt Embedded Control Systems,
+* erweitern dabei sowohl ihre praktischen als auch theoretischen Fachkenntnisse gegenüber dem Stand der Technik,
+* können themengebunden zu speziellen Problemstellungen des Vertiefungsbereiches Embedded Control Systems praktische Lösungen erarbeiten und die Ergebnisse bewerten.
+"
+
+ecscodes
+"
+Die Studierenden
+* sind in der Lage für eine gegebene Systembeschreibung eine geeignete Hardware/Softwarearchitektur zu bestimmen,
+* können Hard/Softwarearchitekturen in Hinblick auf Durchsatz, Ressourcen- und Energieverbrauch zu optimieren,
+* sind in der Lage die Vor- und Nachteile einzelner Implementierungsalternativen zu bestimmen und zu erläutern,
+* wenden Verfahren zur Systempartitionierung an,
+* können die einzelnen Schritte der Systemsynthese erläutern,
+* schätzen die Qualität von Systementwürfen ab,
+* sind in der Lage Systembeschreibungen zu erstellen.
+"
+
+scssel
+"
+Die Studierenden
+* vertiefen sich erfolgreich in ein wechselndes, aktuelles Gebiet aus dem Themenspektrum des Computer Engineering mit Schwerpunkt Safety Critical Systems,
+* erweitern dabei sowohl ihre praktischen als auch theoretischen Fachkenntnisse gegenüber dem Stand der Technik,
+* können themengebunden zu speziellen Problemstellungen des Vertiefungsbereiches Safety Critical Systems praktische Lösungen erarbeiten und die Ergebnisse bewerten.
+"
+
+scslogic
+"
+Die Studierenden
+* kennen die Grundbegriffe der formalen Logik und verschiedene Werkzeuge zu deren Anwendung,
+* können für Problemstellungen aus unterschiedlichen Bereichen eine ausreichend ausdrucksstarke Logik auszuwählen und eine informell gegebene Problemstellung in der ausgewählten Logik adäquat zu formalisieren,
+* können Werkzeuge wie Entscheidungsprozeduren, Theorembeweiser und Model-Checker anwenden und die Ergebnisse dieser Anwendungen richtig interpretieren.
+"
+
+
+
+
+//
+// Semester 3
+//
+
+dsys
+"
+Die Studierenden
+* verfügen über Grundlagen der Kommunikation und der verteilten Datenverarbeitung als verteilte Betriebssystem- und Netzwerkdienste,
+* kennen die Funktionsweise und Designprinzipien von verteilten Systemen, nutzen Software-Konzepte dezentraler Computersysteme und Netzwerke und setzen diese beim systematischen Entwurf und bei der Implementierung eigener Client-/Server-basierter Software effektiv um,
+* kennen des Weiteren die spezifischen Eigenschaften verteilter Systeme im Kontext drahtloser Kommunikationstopologien bzw. sicherheitskritischer Anwendungen.
+"
+
+mbsys
+"
+Die Studierenden
+* verstehen grundlegende Konzepte des Modellbasierten Systems Engineering (MBSE), einschließlich der Vor- und Nachteile,
+* verstehen den Modellbasierten Systementwicklungslebenszyklus und sind in der Lage sein, ihn auf ein gegebenes Projekt anzuwenden,
+* kennen Prinzipien der Modellbasierten Systemarchitektur und -design und sind in der Lage, ein Systemmodell unter Verwendung einer Modellierungssprache wie SysML, UML oder AADL zu erstellen,
+* verstehen Prinzipien der Anforderungsanalyse im Rahmen von MBSE und sind in der Lage sein, ein Anforderungsmodell für ein System zu erstellen,
+* kennen verschiedenen Modellierungssprachen für MBSE und sind in der Lage sein, die geeignete Sprache für ein gegebenes Projekt auszuwählen,
+* verstehen Prinzipien der Modellbasierten Systemanalyse und -simulation und sind in der Lage sein, Modellierungstools zur Durchführung von Systemanalyse und -simulation zu verwenden,
+* verstehen Prinzipien der Verifikation und Validierung von Modellbasierten Systemen und sind in der Lage sein, Modellierungstools zur Verifikation und Validierung eines Systemmodells zu verwenden,
+* kennen Prinzipien der Integration von Hardware- und Softwaremodellen in MBSE und sind in der Lage, ein vereinheitlichtes Modell eines Systems zu erstellen, das sowohl Hardware- als auch Softwarekomponenten umfasst,
+* sind in der Lage Fallstudien erfolgreicher Modellbasierten Systementwicklung zu verstehen und diese Prinzipien auf ein gegebenes Projekt anzuwenden.
+"
+
+proj2
+"
+Die Studierenden
+* können aufbauend auf den Modulen M2 Project Engineering und M9 CE Project 1 Anforderungen aus einem Pflichtenheft in detaillierte Arbeitsaufgaben umsetzen, die vorrangig der Implementierungsphase, der Verifikation und Stabilisierung einer (prototyphaften) Produktentwicklung zuzuordnen sind,
+* kennen Projektmanagementwerkzeuge und können diese im Rahmen eines konkret durchzuführenden Projektes erfolgreich anwenden um den Projektfortschritt und die Arbeitsergebnisse nachvollziehbar zu dokumentieren.
+"
+/*
+wp3
+"
+"
+
+wp4
+"
+"
+*/
+
+ecsrt
+"
+Die Studierenden
+* kennen den Begriff der Echtzeit, die Merkmale des Grundmodells von Echtzeitsystemen und den Unterschied zwischen harten und weichen Echtzeitanforderungen.
+* kennen die verschiedenen Architekturebenen von Rechnersystemen mit besonderem Fokus auf die Erfüllung der Anforderungen von Echtzeitsystemen und wissen, welche Hard- und Softwarekomponenten wie FPGA, Mikrocontroller, Einzel- und Mehrkernprozessorsystemen, verteilte Systeme sowie Echtzeitbetriebssysteme genutzt werden können, um diese zu planen und zu entwickeln,
+* vertiefen ihre Kenntnisse über den Begriff des Prozesses um für Echtzeitsystemen relevante Konzepte. Sie kennen verschiedene Planungsverfahren wie die Planung nach Fristen und Prioritäten und können diese bewerten,
+* wissen um die damit bei der Synchronisation entstehenden verbundenen Probleme wie Prioritätsumkehr sowohl auf Einzel- als auch Mehrkernprozessorsystemen,
+* wissen, wie Echtzeitbetriebssysteme wie FreeRTOS, RTEMS, Embedded-Linux bei der Erfüllung der Echtzeitkriterien helfen und entwickeln einfache Systeme zum Beispiel in Kontext der Regelungstechnik.
+"
+
+ecssig
+"
+Die Studierenden
+* verfügen über vertiefte Kenntnisse und Fertigkeiten in der Digitalen Signalverarbeitung und in der Analyse digitaler Signale im Zeit- und Frequenzbereich,
+* sind in der Lage digitale Filter zu entwerfen und nach Anwendungserfordernissen umzusetzen.
+"
+
+scsdep
+"
+Die Studierenden
+* kennen grundlegenden Konzepte von Zuverlässigkeit, Verfügbarkeit und Sicherheit,
+* bewerten verschiedene Hardware-Redundanz- und Fehlerbehebungstechniken wie Duplizierung, Vielfalt und Abstimmung und verstehen ihre Stärken und Schwächen,
+* bewerten verschiedene Software-Fehlerbehebungstechniken wie Fehlererkennung, Wiederherstellung und Replikation und verstehen ihre Stärken und Schwächen,
+* verstehen die Grundsätze der Zuverlässigkeitsbewertung und -modellierung, einschließlich Fehlerinjektion, Zuverlässigkeitsmodellierung und Systemtest,
+* bewerten verschiedene Sicherheitstest- und Verifizierungstechniken, Schwachstellenanalyse und Codeüberprüfung und verstehen ihre Stärken und Schwächen,
+* wägen zwischen verschiedenen Zuverlässigkeits- und Sicherheitstechniken ab und wenden die gelernten Grundsätze und Techniken an, um zuverlässige Systeme zu entwerfen und zu bewerten,
+* verstehen die Bedeutung zuverlässiger Systeme in verschiedenen Bereichen wie Luft- und Raumfahrt, Gesundheits- und Transportwesen.
+"
+
+scsdsl
+"
+Die Studierenden
+* kennen Beschreibungssprachen für Hard-/Softwaresysteme und können diese zur Beschreibung von realen Systemen anwenden,
+* verstehen fortgeschrittene Techniken zur Analyse und Validierung von Modellen,
+* sind weiterhin in der Lage zu erkennen, unter welchen Umständen die Verwendung von domänenspezifischen Sprachen einer Verwendung von Standardsprachen vorzuziehen ist,
+* können für überschaubare Problemklassen eine zugeschnittene domänenspezifische Sprache in Form ihrer Syntax definieren sowie zugehörige Editoren ableiten,
+* sind mit der Erstellung von Codegeneratoren für ausgesuchte Zielplattformen vertraut.
+"
+
+
+
+
+//
+// Semester 4
+//
+
+masterthesis 
+"
+Die Studierenden
+* fertigen eine Masterarbeit an, in der sie Probleme selbstständig, anwendungsorientiert und wissenschaftlich lösen,
+* bringen das während ihres Studiums erworbene Fach- und Methodenwissen sowie die dabei erworbenen Fach- und Sozialkompetenzen ein und stellen diese unter Beweis,
+* zeigen, dass sich ihr Wissen über die Definition der Systemanforderungen der Aufgabenstellung, das Erarbeiten des System Designs, die Realisierung von Teilsystemen auf die Dokumentation und die Überprüfung der Lösung erstreckt,
+* weisen mit der Erstellung der Masterarbeit ihre Fähigkeit zum selbständigen wissenschaftlichen Arbeiten nach.
+"
+
+oralexam
+"
+Die Studierenden
+* können das methodische Vorgehen und die Ergebnisse ihrer Abschlussarbeit darstellen und begründen,
+* verfügen über gesichertes Wissen und Verständnis in den Fachgebieten, denen die Abschlussarbeit zuzuordnen ist,
+* beherrschen die erforderlichen Präsentations- und Kommunikationskompetenzen und wenden Methoden des wissenschaftlichen Disputs an.
+"
+
+
+
+
+
+

@@ -1,0 +1,553 @@
+model ceMaster_bis_sose23
+
+curriculum ce_ma
+type master
+displayShortName "CE(MA)"
+fullName "Computer Engineering (PO ..., bis SoSe2023)"
+status archived
+noSemesters 4
+url "https://ce-master.htw-berlin.de/fileadmin/HTW/Zentral/Rechtsstelle/Amtliche_Mitteilungsblaetter/2017/20_17.pdf"
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                  _____                  _____       __      
+//|  \/  |         | |     | |                /  ___|                |_   _|     / _|     
+//| .  . | ___   __| |_   _| | ___  ___ ______\ `--. _   _ _ __  _ __  | | _ __ | |_ ___  
+//| |\/| |/ _ \ / _` | | | | |/ _ \/ __|______|`--. \ | | | '_ \| '_ \ | || '_ \|  _/ _ \ 
+//| |  | | (_) | (_| | |_| | |  __/\__ \      /\__/ / |_| | |_) | |_) || || | | | || (_) |
+//\_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_| .__/| .__/\___/_| |_|_| \___/ 
+//                                                        | |   | |                       
+//////////////////////////////////////////////////////////
+
+
+
+supplementaryCurriculumInformation
+
+prerequisiteSection
+// 2. Semester
+ma -> bild recommended 
+
+ma -> regl recommended
+mess -> regl recommended
+
+projentw -> proj1 recommended
+
+
+
+// 3. Semester
+emb -> vsys recommended 
+
+
+ma -> sig recommended 
+
+projentw -> proj2 recommended 
+proj1 -> proj2 recommended 
+
+
+
+
+// 4. Semester
+
+
+
+
+
+
+//moduleTopicSection
+
+
+
+
+
+
+
+// generated with figlet; font doom (https://www.askapache.com/online-tools/figlet-ascii/)
+//////////////////////////////////////////////////////////
+//___  ___          _       _                 ______           _     ______      _        
+// |  \/  |         | |     | |                | ___ \         (_)    |  _  \    | |       
+// | .  . | ___   __| |_   _| | ___  ___ ______| |_/ / __ _ ___ _  ___| | | |__ _| |_ __ _ 
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|______| ___ \/ _` / __| |/ __| | | / _` | __/ _` |
+// | |  | | (_) | (_| | |_| | |  __/\__ \      | |_/ / (_| \__ \ | (__| |/ / (_| | || (_| |
+// \_|  |_/\___/ \__,_|\__,_|_|\___||___/      \____/ \__,_|___/_|\___|___/ \__,_|\__\__,_|
+//                                                                                        
+//////////////////////////////////////////////////////////
+
+
+//
+// Semester 1
+//
+module emb
+officialID "M1"
+shortName "Eingebettete Systeme"
+officialName "Programmierung Eingebetteter Systeme"
+semester 1
+etcs 5
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module ma
+officialID "M2"
+shortName "Angewandte Mathematik"
+officialName "Angewandte Mathematik"
+semester 1
+etcs 6
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module kapswe
+officialID "M3"
+shortName "Ausgew. Kap. SWE"
+officialName "Ausgewählte Kapitel der Softwareentwicklung"
+semester 1
+etcs 5
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module mess
+officialID "M4"
+shortName "Messtechnik"
+officialName "Messtechnik"
+semester 1
+etcs 5
+workingHoursPUE 2
+workingHoursLPr 2
+
+module projentw
+officialID "M5"
+shortName "Projektentwicklung"
+officialName "Projektentwicklung"
+semester 1
+etcs 5
+workingHoursPUE 2
+workingHoursPCUE 2
+
+module awe1
+officialID "M6"
+shortName "AWE-Modul 1"
+officialName "AWE-Modul 1"
+semester 1
+etcs 2
+workingHoursPUE 2
+
+module awe2
+officialID "M7"
+shortName "AWE-Modul 2"
+officialName "AWE-Modul 2"
+semester 1
+etcs 2
+workingHoursPUE 2
+
+
+
+//
+// Semester 2
+//
+
+module bild
+officialID "M8"
+shortName "Bild und Video"
+officialName "Bild- und Videoverarbeitung"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module vlsi
+officialID "M9"
+shortName "VLSI-Anwendungen"
+officialName "VLSI-Anwendungen"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module regl
+officialID "M10"
+shortName "Regelungstechnik"
+officialName "Regelungstechnik"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursLPr 2
+
+module mod
+officialID "M11"
+shortName "Modellbildung/-analyse"
+officialName "Modellbildung und -analyse"
+semester 2
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module proj1
+officialID "M12"
+shortName "CE-Projekt 1"
+officialName "CE-Projekt 1"
+semester 2
+etcs 10
+//workingHoursPS 4,5  // TODO: allow non-integer
+workingHoursPS 4
+
+
+
+
+
+
+//
+// Semester 3
+//
+
+module vsys
+officialID "M13"
+shortName "Verteilte Systeme"
+officialName "Verteilte Systeme"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module vv
+officialID "M14"
+shortName "V&V"
+officialName "Verifikation und Validierung"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module sig
+officialID "M15"
+shortName "Dig. Signalverarbeitung"
+officialName "Digitale Signalverarbeitung"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module komm
+officialID "M16"
+shortName "Drahtl. Kommunikation"
+officialName "Drahtlose Kommunikation"
+semester 3
+etcs 5
+workingHoursSL 2
+workingHoursPCUE 2
+
+module proj2
+officialID "M17"
+shortName "CE-Projekt 2"
+officialName "CE-Projekt 2"
+semester 3
+etcs 10
+//workingHoursPS 4,5  // TODO: allow non-integer
+workingHoursPS 4
+
+
+
+
+
+
+//
+// Semester 4
+//
+
+module masterarb
+officialID "M18"
+shortName "Masterarbeit"
+officialName "Masterarbeit"
+semester 4
+etcs 25
+
+module koll
+officialID "M19"
+shortName "Kolloq./Masterseminar"
+officialName "Abschlusskolloquium mit Masterseminar"
+semester 4
+etcs 5
+//workingHoursPS 1,5  // TODO: allow non-integer
+workingHoursPS 1
+
+
+
+
+
+//
+// _____                   _                           _                  _____       __      
+///  ___|                 | |                         | |                |_   _|     / _|     
+//\ `--. _   _ _ __  _ __ | | ___ _ __ ___   ___ _ __ | |_ __ _ _ __ _   _ | | _ __ | |_ ___  
+// `--. \ | | | '_ \| '_ \| |/ _ \ '_ ` _ \ / _ \ '_ \| __/ _` | '__| | | || || '_ \|  _/ _ \ 
+///\__/ / |_| | |_) | |_) | |  __/ | | | | |  __/ | | | || (_| | |  | |_| || || | | | || (_) |
+//\____/ \__,_| .__/| .__/|_|\___|_| |_| |_|\___|_| |_|\__\__,_|_|   \__, \___/_| |_|_| \___/ 
+//            | |   | |                                               __/ |                   
+//            |_|   |_|                                              |___/                    
+//
+
+
+
+supplementaryCurriculumInformation
+
+
+//
+// _                           _             _____       _                           _____           _   _             
+//| |                         (_)           |  _  |     | |                         /  ___|         | | (_)            
+//| |     ___  __ _ _ __ _ __  _ _ __   __ _| | | |_   _| |_ ___ ___  _ __ ___   ___\ `--.  ___  ___| |_ _  ___  _ __  
+//| |    / _ \/ _` | '__| '_ \| | '_ \ / _` | | | | | | | __/ __/ _ \| '_ ` _ \ / _ \`--. \/ _ \/ __| __| |/ _ \| '_ \ 
+//| |___|  __/ (_| | |  | | | | | | | | (_| \ \_/ / |_| | || (_| (_) | | | | | |  __/\__/ /  __/ (__| |_| | (_) | | | |
+//\_____/\___|\__,_|_|  |_| |_|_|_| |_|\__, |\___/ \__,_|\__\___\___/|_| |_| |_|\___\____/ \___|\___|\__|_|\___/|_| |_|
+//                                      __/ |                                                                          
+//                                     |___/                                                                           
+
+
+learningOutcomeSection
+
+
+//
+// Semester 1
+//
+emb 
+"
+Die Studierenden kennen Eigenschaften verschiedener Mikroprozessoren
+und Entwicklungsumgebungen. Bei den Mikroprozessoren differenzieren
+sie zwischen Architektur, Verarbeitungsbreite, Registeranzahl, Interruptsteuerung,
+Schnittstellen, Optimierungsmöglichkeiten, Befehlssatz, Energieverbrauch
+und Taktfrequenz. Bei den Entwicklungsumgebungen wissen
+sie um die Verfügbarkeit, Funktionen, Unterstützung, vorhandenen
+Ressourcen und Kosten.
+Darüber hinaus kennen die Studierenden die Besonderheiten bei der
+Softwareentwicklung für eingebettete Systeme.
+"
+
+ma
+"
+Die Studierenden beherrschen die mathematischen Grundlagen zur Beschreibung
+Digitaler Signale. Sie lösen mit mathematischen Mitteln ausgewählte
+Aufgaben aus dem Bereich der Systemtheorie. Insbesondere
+können folgende mathematische Themen sicher angewendet werden:
+- Diskrete Fourier-Transformation (DFT/FFT), Diskrete Korrelation,
+- Laplace-Transformation,
+- Z - Transformation.
+"
+
+kapswe
+"
+Die Studierenden beherrschen ausgewählte Methoden auf dem Gebiet der
+Softwareentwicklung. Sie können die Vor- und Nachteile verschiedener
+Methoden für die Entwicklung komplexer Softwareprojekte einschätzen,
+Methoden sachgerecht auswählen und diese fachgerecht einsetzen.
+"
+
+mess
+"
+Die Studierenden verfügen über Grundkenntnisse und Grundfertigkeiten
+zur Messung elektrischer und physikalischer Größen und die dafür notwendigen
+Sensoren und Aktoren. Sie kennen direkte und indirekte Messverfahren
+und Messkonzepte bis hin zu Konzepten der Datenauswertung.
+Darüber hinaus lösen die Studierenden einfache elektrische Messaufgaben,
+bewerten die Ergebnisse und automatisieren Routinemessungen. Sie
+realisieren Messkonzepte beispielhaft anhand von Mikrokontroller
+und/oder FPGA-basierten Systemen.
+"
+
+projentw
+"
+Die Studierenden wissen um die Startphase eines Projekts. Sie kennen die
+notwendigen Planungsschritte von der Spezifikation über das Lastenheft
+bis zum Pflichtenheft und führen diese projektspezifisch durch. Die Studierenden
+recherchieren, vergleichen Lösungsmöglichkeiten und entscheiden
+sich für die zu realisierende Variante. Sie wählen notwendige Komponenten
+aus und entwerfen erste prototyphafte Lösungsansätze. Die Studierenden
+realisieren die Aufgabenplanung, Dokumentation, Versionsverwaltung
+und Kommunikation über einen Projektmanagementserver.
+"
+
+awe1
+"
+Die Studierenden
+- erwerben überfachliche bzw. fachübergreifende, insbesondere soziale und
+kommunikative Kompetenzen („soft skills“) und/oder
+- gewinnen vertieften Einblick in geistes-, kommunikations-, gesellschafts und
+kulturwissenschaftliche Denk- und Herangehensweisen und/oder
+- sind nach Abschluss des Moduls in der Lage, andere Kulturen besser zu
+verstehen und in anderen kulturellen Kontexten zu agieren und/oder
+- gewinnen vertiefte Einblicke in die Potenziale und Probleme interdisziplinärer
+wissenschaftlicher Kooperation.
+"
+
+awe2
+"
+Die Studierenden
+- erwerben überfachliche bzw. fachübergreifende, insbesondere soziale und
+kommunikative Kompetenzen („soft skills“) und/oder
+- gewinnen vertieften Einblick in geistes-, kommunikations-, gesellschafts und
+kulturwissenschaftliche Denk- und Herangehensweisen und/oder
+- sind nach Abschluss des Moduls in der Lage, andere Kulturen besser zu
+verstehen und in anderen kulturellen Kontexten zu agieren und/oder
+- gewinnen vertiefte Einblicke in die Potenziale und Probleme interdisziplinärer
+wissenschaftlicher Kooperation.
+"
+
+
+
+
+
+//
+// Semester 2
+//
+
+bild
+"
+Die Studierenden kennen Algorithmen aus den Gebieten digitale Audio-,
+Bild- und Videoverarbeitung. Sie können für eine Reihe von grundlegenden
+Aufgabenstellungen passende Algorithmen auswählen. Dabei berücksichtigen
+die Studierenden die Anforderungen aus der Anwendung wie
+Datenraten, Darstellungsgenauigkeit, Verzögerungszeiten, Echtzeitfähigkeit,
+Speicherbedarf und können diese Anforderungen auf Hard- und
+Softwaresystemen in geeigneter Weise bewerten und umsetzen.
+"
+
+vlsi
+"
+Die Studierenden kennen erweiterte CMOS-Architekturstrategien, -
+Schaltungstechniken und -Entwurfsmethoden. Sie können VLSI-Schaltungen
+und -Architekturen hinsichtlich Zeit-, Flächen und Leistungseigenschaften
+analysieren und deren funktionale Korrektheit durch Methoden
+der Verifikation und Validierung nachweisen.
+Sie kennen neben der effizienten Realisierung der arithmetischen Basisoperationen
+auch grundlegende Architekturen der digitalen Signalverarbeitung
+für hochratige und verlustleistungskritische Anwendungen und
+können Konzepte zur Performanzsteigerung einschätzen und anwenden.
+Sie kennen Konzepte zur Leistungssteigerung wie Parallelisierung, Mehrfachnutzung
+und Pipelining sowie Grundzüge der quantitativen Optimierung.
+"
+
+regl
+"
+Die Studierenden verfügen über Kenntnisse und Fertigkeiten zur Regelung
+elektrischer und physikalischer Größen und die dafür notwendigen
+Sensoren und Aktoren. Sie kennen verschiedene Regelungsverfahren und
+Regelungskonzepte. Sie kennen und differenzieren die wichtigsten Übertragungsglieder
+und Reglerstrukturen. Sie wissen wie Systeme im Zeit- und
+Frequenzbereich beschrieben werden. Darüber hinaus lösen die Studierenden
+elektrische bzw. elektronische Regelungsaufgaben, bewerten
+die Ergebnisse und parametrieren ihre Regelungssysteme in einer der
+Aufgabenstellung angemessenen Weise. Sie realisieren praktische Regelungssysteme
+unter Zuhilfenahme von Mikrokontrollern und/oder FPGA-basierten
+Systemen.
+"
+
+mod
+"
+Die Studierenden kennen Beschreibungssprachen für Hard-
+/Softwaresysteme und können diese zur Beschreibung von realen Systemen
+anwenden. Sie verstehen fortgeschrittene Techniken zur Analyse
+und Validierung von Modellen. Die Studierenden sind weiterhin in der
+Lage zu erkennen, unter welchen Umständen die Verwendung von domänenspezifischen
+Sprachen einer Verwendung von Standardsprachen vorzuziehen
+ist. Sie können für überschaubare Problemklassen eine zugeschnittene
+domänenspezifische Sprache in Form ihrer Syntax definieren
+sowie zugehörige Editoren ableiten. Weiterhin ist ihnen die Erstellung von
+Codegeneratoren für ausgesuchte Zielplattformen vertraut.
+"
+
+proj1
+"
+Aufbauend auf dem Modul M5 Projektentwicklung können die Studierenden
+Anforderungen aus einem Pflichtenheft in detaillierte Arbeitsaufgaben
+umsetzen, die vorrangig der Konzeptphase und der Entwurfsphase einer
+(prototyphaften) Produktentwicklung zuzuordnen sind. Sie kennen 
+Projektmanagementwerkzeuge und können diese im Rahmen eines konkret
+durchzuführenden Projektes erfolgreich anwenden um den Projektfortschritt
+und die Arbeitsergebnisse nachvollziehbar zu dokumentieren.
+"
+
+
+
+//
+// Semester 3
+//
+
+vsys
+"
+Die Studierenden verfügen über Grundlagen der Kommunikation und der
+verteilten Datenverarbeitung als verteilte Betriebssystem- und Netzwerkdienste.
+Sie kennen die Funktionsweise und Designprinzipien von verteilten
+Systemen, nutzen Software-Konzepte dezentraler Computersysteme
+und Netzwerke und setzen diese beim systematischen Entwurf und bei
+der Implementierung eigener Client-/Server-basierter Software effektiv
+um. Des Weiteren kennen die Studierenden die spezifischen Eigenschaften
+verteilter Systeme im Kontext drahtloser Kommunikationstopologien
+bzw. sicherheitskritischer Anwendungen.
+"
+
+vv
+"
+Die Studierenden kennen die Prinzipien und Methoden der Validierung
+und Verifikation in der Projektarbeit. Sie wissen, wie mittels Validierung
+das erstellte Produkt gegen seine Spezifikation geprüft werden kann.
+Hinsichtlich der Verifikation wenden die Studierenden Techniken zur
+Funktionsüberprüfung von Hard- und Softwarekomponenten an. Hierbei
+werden Kompetenzen zum systemtechnischen Denken und Handeln erworben
+und damit die Fähigkeit gefestigt, einen Gesamtprozess kritisch
+zu analysieren.
+"
+
+sig
+"
+Die Studierenden verfügen über vertiefte Kenntnisse und Fertigkeiten in
+der Digitalen Signalverarbeitung und in der Analyse digitaler Signale im
+Zeit- und Frequenzbereich. Sie sind in der Lage digitale Filter zu entwerfen
+und nach Anwendungserfordernissen umzusetzen.
+"
+
+komm
+"
+Die Studierenden beherrschen die Funktion und Anwendung drahtloser
+Kommunikationssysteme. Sie kennen die Übertragungsprinzipien einzelner
+Funkstandards sowie Bandbreiten, überbrückbare Distanzen, Datenraten
+und Energieverbrauch. Sie sind in der Lage, Funkschnittstellen zum
+Datenaustausch zwischen einzelnen Systemkomponenten einzusetzen.
+"
+
+proj2
+"
+Aufbauend auf den Modulen M5 Projektentwicklung und M12 CE-Projekt 1
+können die Studierenden Anforderungen aus einem Pflichtenheft in detaillierte
+Arbeitsaufgaben umsetzen, die vorrangig der Implementierungsphase,
+der Verifikation und Stabilisierung einer (prototyphaften) Produktentwicklung
+zuzuordnen sind. Sie kennen Projektmanagementwerkzeuge und
+können diese im Rahmen eines konkret durchzuführenden Projektes erfolgreich
+anwenden um den Projektfortschritt und die Arbeitsergebnisse
+nachvollziehbar zu dokumentieren.
+"
+
+
+
+
+//
+// Semester 4
+//
+
+
+masterarb
+"
+Die Studierenden fertigen eine Masterarbeit an, in der sie Probleme anwendungsorientiert
+und wissenschaftlich lösen. Dabei bringen die Studierenden
+das während ihres Studiums erworbene Fach- und Methodenwissen sowie die dabei erworbenen Fach- und Sozialkompetenzen ein und
+stellen diese unter Beweis. Das Wissen erstreckt sich über die Definition
+der Systemanforderungen der Aufgabenstellung, das Erarbeiten des System
+Designs, die Realisierung von Teilsystemen auf die Dokumentation
+und die Überprüfung der Lösung. Mit der Erstellung der Masterarbeit
+weist der oder die Studierende des Studiengangs seine/ihre Fähigkeit
+zum selbständigen wissenschaftlichen Arbeiten nach.
+"
+
+koll
+"
+Die Studierenden strukturieren eine wissenschaftliche Arbeit, arbeiten sie
+aus und präsentieren sie. Sie wenden Methoden des wissenschaftlichen
+Disputs an.
+"
+
+
+
+

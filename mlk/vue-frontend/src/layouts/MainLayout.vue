@@ -62,7 +62,7 @@
 
     <q-page-container>
       <div v-show="showLangium">
-        <iframe src="http://localhost:3000" style="width: 1380px; height: 830px;" frameborder="0"></iframe>
+        <iframe src="http://localhost:3000" style="width: 1380px; height: 876px;" frameborder="0"></iframe>
       </div>
       <div v-show="showVisualization">
         <AstVisualizer />

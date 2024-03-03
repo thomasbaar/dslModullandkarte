@@ -83,10 +83,9 @@ export default {
                 { label: 'Verwendbarkeit des Moduls', value: 'TBD' },
                 { label: 'Anerkannte Module', value: 'TBD' },
                 { label: 'Pflicht / Wahlfplicht', value: 'Pflicht' },
-                { label: 'Form', value: 'TBD' },
-                { label: 'SWS', value: 'TBD' },
+                { label: 'Form', value: mod.form },
+                { label: 'SWS', value: mod.sws.toString() },
                 { label: 'LP', value: mod.etcs.toString() },
-                { label: 'NSt', value: '1a' },
                 { label: 'NV', value: '-' },
                 { label: 'EV', value: 'TBD' },
             ];

@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8'>
-        <!-- Page & Monaco styling -->
-        <link href="styles.css" rel="stylesheet"/>
-        <title>ModulLandKarte in Langium</title>
-    </head>
-    <body>
-        <h1>ModulLandkarte in Langium</h1>
+<head>
+    <meta charset='utf-8'>
 
-                <!-- Add a button to update our canvas, will invoke a globally accessible function -->
-                <div style="text-align:center">
-                    <input class="build" type="button" value="Update Input" onclick="window.generateAndDisplay()">
-                    <span id="status-msg"></span>
-                </div>
-        
-                <!-- Use a wrapper to display Monaco + Canvas side-by-side -->
-                <div id="page-wrapper">
-                    <!-- Monaco half -->
-                    <div class="half">
-                        <div class="wrapper">
-                            <div id="monaco-editor-root"></div>
-                        </div>
-                    </div>
-                    <!-- Canvas half -->
-                </div>
-        
+    <link href="styles.css" rel="stylesheet"/>
 
-        <footer>
-            <p style="font-style:italic">Powered by</p>
-            <img width="125" src="https://langium.org/assets/langium_logo_w_nib.svg" alt="Langium">
-        </footer>
-        <!-- Monaco Configuration -->
-        <script type="module" src="setup.js"></script>
-    </body>
+    <title>ModulLandKarte in Langium</title>
+</head>
+<body>
+    <div id="buttons-container">
+
+        <div id="update-and-upload">
+            <input class="button update-button" type="button" value="Generate Visualisation" onclick="window.generateAndDisplay()">
+            <span class="text-label">Load local file:</span>
+            <input type="file" id="file-input" style="display: none;">
+            <label for="file-input" class="button file-input-button">Select File</label>
+            <input class="button" type="button" value="Load selected File" id="load-from-file">
+        </div>
+
+        <div id="presets-container">
+            <span class="text-label">Load an example:</span>
+            <div id="presets">
+                <input type="button" class="button preset-button" id="curriculum2" value="CE BA bis SoSe 20">
+                <input type="button" class="button preset-button" id="curriculum1" value="CE BA ab WS 2021">
+                <input type="button" class="button preset-button" id="curriculum4" value="CE MA bis SoSe 23">
+                <input type="button" class="button preset-button" id="curriculum3" value="CE MA ab WS 23/24">
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="half">
+            <div class="wrapper">
+                <div id="monaco-editor-root"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="font-style:italic">Powered by</p>
+        <img width="125" src="https://langium.org/assets/langium_logo_w_nib.svg" alt="Langium">
+    </footer>
+
+    <script type="module" src="setup.js" defer></script>
+
+</body>
 </html>

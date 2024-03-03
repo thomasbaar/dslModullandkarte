@@ -48,8 +48,16 @@ function extractCurriculumData(ast) {
         return prereqsWithTopics;
     }).flat();
 
-    // Extraktion der Modulinformationen
-    const extractedModules = curriculum.modules.map(mod => {
+// Extraktion der Modulinformationen inklusive Form und SWS
+const extractedModules = curriculum.modules.map(mod => {
+    const workingHoursEntries = Object.entries(mod)
+        .filter(([key, value]) => key.startsWith('workingHours') && value > 0);
+    const form = workingHoursEntries
+        .map(([key]) => key.replace('workingHours', ''))
+        .join(' / ');
+    const sws = workingHoursEntries
+        .reduce((total, [, value]) => total + value, 0);
+    
         return {
             name: mod.name,
             officialID: mod.officialID,
@@ -57,10 +65,13 @@ function extractCurriculumData(ast) {
             officialName: mod.officialName,
             semester: mod.semester,
             etcs: mod.etcs,
+            form: form || 'TBD',
+            sws: sws,
             description: moduleDescriptions[mod.name] || '',
-            topics: moduleTopics[mod.name] || []  // Hinzufügen der Themen zu jedem Modul
+            topics: moduleTopics[mod.name] || []
         };
     });
+    
 
     return {
         name: curriculum.name,

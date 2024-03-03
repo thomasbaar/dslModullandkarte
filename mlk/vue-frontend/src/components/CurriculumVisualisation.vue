@@ -246,6 +246,7 @@ export default {
     const onEdgeClick = (edge) => {
       const edgeData = edge.edge;
       createEdgeNodes(edgeData.source, edgeData.target);
+
     };
 
     const updateEdges = () => {
@@ -319,7 +320,7 @@ export default {
         }
 
         nodes.value = tempNodes;
-        console.log(nodes.value);
+        //console.log(nodes.value);
         updateEdges();
       }
 
@@ -331,7 +332,23 @@ export default {
     const resetView = () => {
       nodes.value.forEach(n => n.hidden = false);
       edges.value.forEach(e => e.hidden = false);
+
+      edges.value = edges.value.map(edge => ({
+        ...edge,
+        hidden: false,
+        style: {
+          ...edge.style,
+          stroke: 'green',
+          strokeWidth: 3,
+        },
+        markerEnd: {
+          type: MarkerType.Arrow,
+          color: "green",
+        },
+      }));
+
       specialNodeVisible.value = false;
+
     };
 
     return { nodes, edges, isLoaded, toggleEdges, nodeTypes, onEdgeClick, noSemesters, selectedSemesters, semesterList, toggleAllSemesters, allSemestersChecked, updateEdges, onNodeClick, onSpecialNodeClose, closeAllEdgeNodes };

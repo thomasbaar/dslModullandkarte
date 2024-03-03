@@ -12,6 +12,7 @@ editorConfig.setMainLanguageId('modul-land-karte');
 editorConfig.setMonarchTokensProvider(monarchSyntax);
 
 let mainCode = `
+// Default example!
 model v001
 
 curriculum ce_ba
@@ -579,9 +580,9 @@ client.setWorker(lsWorker);
 const startingPromise = client.startEditor(document.getElementById("monaco-editor-root"));
 
 // Set a status message to display below the update button
-function setStatus(msg) {
-    document.getElementById('status-msg').innerHTML = msg;
-}
+//function setStatus(msg) {
+//    document.getElementById('status-msg').innerHTML = msg;
+//}
 
 let running = false;
 const generateAndDisplay = (() => {
@@ -589,7 +590,7 @@ const generateAndDisplay = (() => {
         return;
     }
     running = true;
-    setStatus('');
+    //setStatus('');
     console.info('generating and displaying information ...');
     const value = client.editor.getValue();
     if (window.localStorage) {
@@ -611,6 +612,43 @@ function sendAstToVue(AST) {
     window.parent.postMessage(AST, 'http://localhost:9000');
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('load-from-file').addEventListener('click', loadFromFile);
+    document.getElementById('curriculum1').addEventListener('click', () => loadPreset('ceBa_abWS2021.mlk'));
+    document.getElementById('curriculum2').addEventListener('click', () => loadPreset('ceBa_bisSoSe20.mlk'));
+    document.getElementById('curriculum3').addEventListener('click', () => loadPreset('ceMa_abWS2324.mlk'));
+    document.getElementById('curriculum4').addEventListener('click', () => loadPreset('ceMa_bisSoSe23.mlk'));
+});
+
+function loadFromFile() {
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const content = e.target.result;
+            client.editor.setValue(content);
+        };
+        reader.readAsText(file);
+    }
+}
+
+function loadPreset(presetPath) {
+    fetch(presetPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            client.editor.setValue(data);
+        })
+        .catch(error => {
+            console.error('Error loading the preset:', error);
+        });
+}
 
 
 

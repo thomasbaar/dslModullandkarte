@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>672</x>
+      <y>0</y>
+      <w>288</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>*MLK*
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>400</x>
+      <y>272</y>
+      <w>952</w>
+      <h>1800</h>
+    </coordinates>
+    <panel_attributes>mlk
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>416</x>
+      <y>312</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>bin
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>336</y>
+      <w>48</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>cli.js</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>536</x>
+      <y>312</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>examples
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>648</x>
+      <y>312</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+out
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>768</x>
+      <y>312</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+public
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>768</x>
+      <y>224</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>- so far not fully generated
+- used also for static content
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>256</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>416</x>
+      <y>392</y>
+      <w>792</w>
+      <h>568</h>
+    </coordinates>
+    <panel_attributes>src
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>424</x>
+      <y>416</y>
+      <w>384</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>bin
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>440</y>
+      <w>184</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>cli-util.ts
+-
+extractDocument()
+extractAstNode()
+extractDestionationAndName()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>440</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>generator.ts
+-
+generateJavaScript()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>200</x>
+      <y>416</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>- probably not needed
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>432</y>
+      <w>272</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>320.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>496</y>
+      <w>136</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>main.ts
+-
+generateAction
+default function()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>440</y>
+      <w>280</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>330.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>824</x>
+      <y>416</y>
+      <w>112</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>extension
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>440</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>main.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>968</x>
+      <y>232</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>generic code
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>264</y>
+      <w>152</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;190.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>440</x>
+      <y>576</y>
+      <w>384</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>language
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>696</x>
+      <y>608</y>
+      <w>96</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+generated
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>616</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>main-browser.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>280</x>
+      <y>536</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>generic code
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>552</y>
+      <w>120</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>616</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>main.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>544</y>
+      <w>248</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>672</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>modul-land-karte-module.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>144</x>
+      <y>600</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CommandHandler for parseAndGenerate
+implemented here
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>616</y>
+      <w>96</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>728</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>modul-land-karte-validator.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>304</x>
+      <y>656</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- still empty
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>664</y>
+      <w>96</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>784</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>modul-land-karte.langium
+-
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>840</x>
+      <y>584</y>
+      <w>344</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>static
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>616</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>index.html
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>184</x>
+      <y>704</y>
+      <w>200</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>- implements webpage-structure
+- buttons are defined here
+- invokes window.generateAndDisplay
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>624</y>
+      <w>496</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;130.0;600.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>616</y>
+      <w>216</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>setup.js
+-
+generateAndDisplay
+sendAstToVue()
+loadFromFile()
+loadPreset() // .mlk files from static folder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>192</x>
+      <y>776</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- far too long default input code
+
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>640</y>
+      <w>592</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;190.0;720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>184</x>
+      <y>824</y>
+      <w>200</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>- provides default input
+- invokes 'parseAndGenerate'
+- add event-listener for button-clicks
+- 
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>664</y>
+      <w>592</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;230.0;720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>736</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>styles.css
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>728</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>ceBa_abWS2021.mlk
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>192</x>
+      <y>904</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>- should be removed from here
+- perhaps to be substituted by 
+  tutorial-input
+
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>744</y>
+      <w>616</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;230.0;750.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>840</x>
+      <y>832</y>
+      <w>344</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>web
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>864</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>app.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>872</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>index.ts
+-
+parseAndGenerate()
+extractAstNodeFromString()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>184</x>
+      <y>968</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>- uses express-lib ?!
+- listens on port 3000
+
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>872</y>
+      <w>512</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;150.0;620.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>176</x>
+      <y>1064</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>- much code is commented out
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>888</y>
+      <w>640</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;250.0;780.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>448</x>
+      <y>984</y>
+      <w>456</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>syntaxes
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>1008</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>modul-land-karte.monarch.ts
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>1008</y>
+      <w>208</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>modul-land-karte.tmLanguage.json
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>240</x>
+      <y>1136</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- looks generated
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>1040</y>
+      <w>240</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;140.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>1032</y>
+      <w>328</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;160.0;390.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>1096</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>.eslintrc.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>1096</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>esbuild.mjs</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>1096</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>langium-config.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>1096</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>language-configuration.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>1152</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>package-lock.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>1152</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>package.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>1152</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>tsconfig.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>1152</y>
+      <w>136</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>tsconfig.monarch.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>768</x>
+      <y>120</y>
+      <w>112</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>doc
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>128</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>LICENSE
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>32</x>
+      <y>96</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>- right place?
+- right content?
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>112</y>
+      <w>216</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>250.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>184</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>package-lock.json</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>120</x>
+      <y>176</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- necessary ???
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>184</y>
+      <w>208</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>232</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>README.md</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>120</x>
+      <y>232</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- very laconic
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>232</y>
+      <w>200</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>440</x>
+      <y>1240</y>
+      <w>880</w>
+      <h>768</h>
+    </coordinates>
+    <panel_attributes>vue-frontend
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>64</x>
+      <y>1264</y>
+      <w>240</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>- separate project to be built
+- depends on QUASAR-framework
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>1272</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>688</y>
+      <w>432</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;520.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>472</x>
+      <y>1272</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+.quasar
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>640</x>
+      <y>1272</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+.vscode
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>800</x>
+      <y>1272</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+dist
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>968</x>
+      <y>1272</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>public
+--
+
+group=group-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>992</x>
+      <y>1296</y>
+      <w>88</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>icons
+--
+
+group=group-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>456</x>
+      <y>1376</y>
+      <w>832</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>src
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>952</x>
+      <y>1576</y>
+      <w>192</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>assets
+--
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>664</x>
+      <y>1616</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>boot
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>480</x>
+      <y>1408</y>
+      <w>536</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>components
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>472</x>
+      <y>1592</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>css
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>776</x>
+      <y>1624</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>layouts
+--
+
+group=group-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>488</x>
+      <y>1712</y>
+      <w>176</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>pages
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>680</x>
+      <y>1728</y>
+      <w>176</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>router
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>904</x>
+      <y>1736</y>
+      <w>208</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>stores
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>1504</y>
+      <w>136</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>App.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1384</x>
+      <y>1472</y>
+      <w>232</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>- listens on port 3000
+- template delegates to &lt;router-view/&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1248</x>
+      <y>1480</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;50.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>1760</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>index.js</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>1688</y>
+      <w>416</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1376</x>
+      <y>1680</y>
+      <w>184</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- external dependency to pinia
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1024</x>
+      <y>1768</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>astStore.js</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1392</x>
+      <y>1768</y>
+      <w>256</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- extracts from AST necessary information :-(
+-- has to be adapted every time the grammar changes
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>1768</y>
+      <w>328</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>928</x>
+      <y>1816</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;generated&gt;&gt;
+store-flag.d.ts</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>1760</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>index.js</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>1600</y>
+      <w>640</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;210.0;780.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1376</x>
+      <y>1592</y>
+      <w>184</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- depends on vue-router
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>1800</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>routes.js</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1392</x>
+      <y>1880</y>
+      <w>184</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>- only Main-page or Error-page
+  are routed
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>1800</y>
+      <w>616</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;750.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>1744</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>IndexPage.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>1800</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>ErrorNotFound.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>176</x>
+      <y>1880</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>- defined components
+'IndexPage', 'ErrorNotFound'
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>1752</y>
+      <w>176</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;190.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>1808</y>
+      <w>176</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;130.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>1648</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>MainLayout.vue
+group=group-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>160</x>
+      <y>1784</y>
+      <w>216</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>- defines main structure of web-site
+- template uses quasar-elements
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>1656</y>
+      <w>432</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;200.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>1616</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>app.scss</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>1648</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>quasar.variables.scss</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>320</x>
+      <y>1608</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>-  empty
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>1616</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>216</x>
+      <y>1664</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>-  concrete values
+ for (theme) variables
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>1656</y>
+      <w>152</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;40.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>1600</y>
+      <w>136</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>quasar-logo-vertical.svg
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>1576</y>
+      <w>304</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;60.0;50.0;10.0;350.0;10.0;360.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>1432</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>AstVisualizer.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>128</x>
+      <y>1368</y>
+      <w>224</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>-  provides curriculumData from AstStore
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>1384</y>
+      <w>176</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>1432</y>
+      <w>200</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>CurriculumVisualization.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>1440</y>
+      <w>224</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>-  large file
+- heart of visualization
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>1440</y>
+      <w>448</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;20.0;540.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>1472</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>EdgeNode.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>1504</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>ExpandedNode.vue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>160</x>
+      <y>1528</y>
+      <w>224</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>-  shows detailed dependency information
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>1520</y>
+      <w>376</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;60.0;450.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>256</x>
+      <y>1472</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>bad names
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>1488</y>
+      <w>384</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;460.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>1480</y>
+      <w>192</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>144</x>
+      <y>1568</y>
+      <w>224</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>-  shows detailed Module information
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>1488</y>
+      <w>152</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;70.0;170.0;10.0</additional_attributes>
+  </element>
+</diagram>

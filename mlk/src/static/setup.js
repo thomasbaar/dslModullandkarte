@@ -576,7 +576,8 @@ const lsWorker = new Worker(workerURL.href, {
 });
 client.setWorker(lsWorker);
 
-// keep a reference to a promise for when the editor is finished starting, we'll use this to setup the canvas on load
+// keep a reference to a promise for when the editor is finished starting,
+// we'll use this to setup the canvas on load
 const startingPromise = client.startEditor(document.getElementById("monaco-editor-root"));
 
 // Set a status message to display below the update button

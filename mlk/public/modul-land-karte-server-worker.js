@@ -605,7 +605,7 @@ ${r}`),this.inline?`{${i}}`:i}};function nU(t,e,r){var n,i;if(t==="linkplain"||t
               },
               {
                 "$type": "Assignment",
-                "feature": "workingHoursSL",
+                "feature": "workingHourSL",
                 "operator": "=",
                 "terminal": {
                   "$type": "RuleCall",
